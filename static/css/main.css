@@ -1,6 +1,30 @@
-.test {
-    color:blue;
+.title {
+    display: flex;
+    align-items: center;
+    color:black;
     border: 5px solid black;
     padding: 15px;
     margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.items {
+    align-content: center;
+    display: block;
+    padding-inline: 10rem;
+    padding: 8rem;
+    border: 5px solid black;
+    margin: 1rem;
+}
+
+.itemcont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.addtocart{
+    margin-left: 1rem;
+    margin-bottom: 2rem;
 }
