@@ -46,6 +46,7 @@ button, .btn-default{
     background-color: #71AEE5;
     border-radius: 10px;
     color: #ffffff;
+    background-image: none;
 }
 
 .container-fluid{
