@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 <!--  class="active" <span class="sr-only">(current)</span>-->
-        <li><a href="/homepage/cereal/">Cereal </a></li>
-        <li><a href="/homepage/toys/">Toys</a></li>
-        <li><a href="/homepage/cutlery/">Cutlery</a></li>
-        <li><a href="/homepage/clothes/">Clothes</a></li>
+        <li><a href="{% url 'cereal-index' %}">Cereal </a></li>
+        <li><a href="{% url 'toys-index' %}">Toys</a></li>
+        <li><a href="{% url 'cutlery-index' %}">Cutlery</a></li>
+        <li><a href="{% url 'toys-index' %}">Clothes</a></li>
 
         </li>
       </ul>
@@ -29,9 +29,9 @@
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/homepage/sign_up/">Sign up</a></li>
-        <li><a href="/homepage/sign_in/">Sign in</a></li>
-        <li><a href="/homepage/cart/">Cart</a></li>
+        <li><a href="{% url 'sign_up-index' %}">Sign up</a></li>
+        <li><a href="{% url 'sign_in-index' %}">Sign in</a></li>
+        <li><a href="{% url 'cart-index' %}">Cart</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

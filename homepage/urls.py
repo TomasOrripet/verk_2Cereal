@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     # http://localhost:8000/Homepage
-    path('', views.index, name='index'),
+    path('', views.index, name='homepage-index'),
 ]
