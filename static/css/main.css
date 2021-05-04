@@ -57,12 +57,11 @@ button, .btn-default{
     color: #ffffff;
 }
 
-ul.nav.navbar-nav{
-    background-color: #3669c4;
-    color: white;
-}
-
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
     background-image: linear-gradient(to bottom,#3669c4 0, #2d5db1 100%);
     color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
 }
