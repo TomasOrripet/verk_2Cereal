@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     # http://localhost:8000/toys
-    path('', views.index, name='index'),
+    path('', views.index, name='toys-index'),
 ]
