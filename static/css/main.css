@@ -36,9 +36,9 @@ body{
 }
 
 .navbar-brand{
-    font-family: 'Century Gothic';
     font-size: 40px;
     font-weight: bold;
+    color: white;
 }
 
 button, .btn-default{
@@ -46,6 +46,10 @@ button, .btn-default{
     border-radius: 10px;
 }
 
-.navbar navbar-default{
-    background-color: #407de3;
+.container-fluid{
+    background-color: #3e80e2;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
 }
