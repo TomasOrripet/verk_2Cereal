@@ -37,7 +37,6 @@ body{
 }
 
 .navbar-brand{
-    font:-family: 'Century Gothic';
     font-size: 40px;
     font-weight: bold;
     color: white;
@@ -46,12 +45,24 @@ body{
 button, .btn-default{
     background-color: #71AEE5;
     border-radius: 10px;
+    color: #ffffff;
+    background-image: none;
 }
 
 .container-fluid{
-    background-color: #3e80e2;
+    background-color: #6b97ea;
+    color: #ffffff;
 }
 
 .navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
+    background-image: linear-gradient(to bottom,#3669c4 0, #2d5db1 100%);
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
     color: #ffffff;
 }
