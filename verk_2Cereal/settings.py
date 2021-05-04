@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'ship-O-cereal-db',
-        'USER': 'Tomas',
-        'PASSWORD': '7aj9xybywvv0ABHO',
+        'USER': 'tomasorri',
+        'PASSWORD': 'tomas123',
         'HOST': '35.228.182.112',
         'PORT': '5432',
     }
