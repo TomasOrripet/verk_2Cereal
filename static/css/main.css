@@ -70,3 +70,23 @@ button:hover, li:hover, a:hover{
     color: white;
     transition: all 0.7s;
 }
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.78);
+    background-color: transparent;
+}
+
+.btn-default:focus, .btn-default:hover {
+    background-color: #3669c4;
+    color: white;
+    background-position: 0 -15px;
+}
+
+h2{
+    font-weight: bold;
+}
