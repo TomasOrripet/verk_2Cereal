@@ -1,10 +1,12 @@
 from django.forms import ModelForm, widgets
-from cereal.models import cereal
+from cereal.models import Cereal
+
 
 
 class cerealCreateForm(ModelForm):
     class Meta:
-        model = cereal
+        model = Cereal
+        db_table = 'Cereal'
         exclude = ['id']
         widgets = {
             'name': widgets.TextInput(attrs={'class': 'form-control'}),
