@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'verk_2Cereal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ship-O-cereal-db',
         'USER': 'tomasorri',
         'PASSWORD': 'tomas123',
