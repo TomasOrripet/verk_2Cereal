@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cereal.apps.CerealConfig',
+    'sign_up'
 ]
 
 MIDDLEWARE = [
@@ -77,10 +78,10 @@ WSGI_APPLICATION = 'verk_2Cereal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ship-O-cereal-db',
-        'USER': 'Tomas',
-        'PASSWORD': '7aj9xybywvv0ABHO',
+        'USER': 'tomasorri',
+        'PASSWORD': 'tomas123',
         'HOST': '35.228.182.112',
         'PORT': '5432',
     }
