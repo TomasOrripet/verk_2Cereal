@@ -1,0 +1,9 @@
+<title>information</title>
+{% extends 'base.html' %}
+{% block content %}
+    <form class="" action="{% url 'info' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Create" class="" style="clear:both; margin:10px 0"/>
+    </form>
+{% endblock %}

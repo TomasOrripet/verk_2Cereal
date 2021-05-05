@@ -13,8 +13,9 @@ class createAccountForm(ModelForm):
         widgets = {
             'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'country': widgets.Select(attrs={'class': 'form-control'}),
+            'country': widgets.TextInput(attrs={'class': 'form-control'}),
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'zip': widgets.TextInput(attrs={'class': 'form-control'}),
             'price': widgets.NumberInput(attrs={'class': 'form-control'}),
         }
+
