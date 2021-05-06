@@ -20,6 +20,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    background-color: #71AEE5;
 }
 
 .addtocart{
@@ -89,4 +90,11 @@ button:hover, li:hover, a:hover{
 
 h2{
     font-weight: bold;
+}
+
+.cart{
+    border: 8px solid black;
+    padding: 1rem;
+    margin-right: 60%;
+    background-color: #71AEE5;
 }
