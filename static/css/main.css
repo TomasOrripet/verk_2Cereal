@@ -97,3 +97,13 @@ h2{
     margin-right: 60%;
     background-color: #71AEE5;
 }
+.temps{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filterby{
+    padding-left: 3rem;
+    padding-right: 1rem;
+}
