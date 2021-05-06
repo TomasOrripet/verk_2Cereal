@@ -2,6 +2,7 @@ from django.db import models
 
 
 # Create your models here.
+
 class createAccount(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -13,4 +14,10 @@ class createAccount(models.Model):
 
 class createAccountImage(models.Model):
     image = models.CharField(max_length=9999)
+    account = models.ForeignKey(createAccount, on_delete=models.CASCADE)
+
+
+class userAndPassword(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=100)
     account = models.ForeignKey(createAccount, on_delete=models.CASCADE)

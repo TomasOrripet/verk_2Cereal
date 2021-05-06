@@ -1,9 +1,11 @@
-<title>Sign Up</title>
+<title>Sign up</title>
 {% extends 'base.html' %}
+
 {% block content %}
-    <form class="" action="{% url 'createAccount' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Create" class="" style="clear:both; margin:10px 0"/>
-    </form>
+    <div class="test">
+        <h2>this is the Sign up</h2>
+        <form action="sign_up" method="get">
+            <button type="submit" >Submit</button>
+        </form>
+    </div>
 {% endblock %}
