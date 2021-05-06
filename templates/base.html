@@ -8,17 +8,28 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
 </head>
 <body>
         {% include 'navigation.html' %}
-        <div class="container">
-        {% include 'filter_by.html' %}
-            {% block content %}
-            {% endblock %}
+
+        <div class="temps">
+            <div>
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="filterby">
+                <input type="checkbox" id="healthy" name="healthy" value="Healthy">
+                <label for="healthy"> Healthy</label><br>
+                <input type="checkbox" id="sugary" name="sugary" value="Sugary">
+                <label for="sugary"> Sugary</label><br>
+
+            </div>
         </div>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

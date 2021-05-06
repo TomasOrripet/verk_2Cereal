@@ -1,7 +1,15 @@
 from django.db import models
 
 # Create your models here.
-class Cereal(models.Model):
-    name = models.CharField(max_length=255)
-    info = models.CharField(max_length=255)
+class createType(models.Model):
+    typeName = models.CharField(max_length=255)
+
+
+
+class createCereal(models.Model):
+    cerealName = models.CharField(max_length=255)
+    cerealNutritionalValue = models.CharField(max_length=255)
+    cerealContents = models.CharField(max_length=255)
     price = models.FloatField()
+    type = models.ForeignKey(createType, on_delete=models.CASCADE)
+
