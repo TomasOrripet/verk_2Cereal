@@ -13,6 +13,8 @@ def info(request):
         form = createAccountForm(data=request.POST)
         if form.is_valid():
             account = form.save()
+            user = userAndPassword(username=request.POST['username'], password=request.POST['password'], account=account)
+            user.save()
             inf_image = createAccountImage(image=request.POST['image'], account=account)
             inf_image.save()
             return redirect('account-index')
