@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from sign_up.forms.sign_up_forms import createAccountForm
-from sign_up.models import createAccountImage
+from sign_up.models import createAccountImage, userAndPassword
 
 
 def index(request):
