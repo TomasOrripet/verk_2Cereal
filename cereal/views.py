@@ -26,7 +26,7 @@ def createType(request):
             form.save()
             return redirect('cereal-index')
     else:
-        form = cereal_form.cerealCreateForm()
+        form = cereal_form.cerealCreateType()
     return render(request, 'cereal/createType.html', {
         'form': form
     })
