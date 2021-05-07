@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
+from sign_up.forms.forms import RegisterForm
 from sign_up.forms.sign_up_forms import createAccountForm
 from sign_up.models import createAccountImage, userAndPassword
 
@@ -23,3 +23,12 @@ def info(request):
     return render(request, 'sign_up/info.html', {
         'form': form
     })
+
+def register(response):
+    if response.method == 'POST':
+        form = RegisterForm(response.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = RegisterForm()
+    return render(response, "sign_up/register.html", {"form":form})
