@@ -1,0 +1,9 @@
+<title>information</title>
+{% extends 'base.html' %}
+{% block content %}
+    <form class="form-group" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" value="Create" class="btn btn-default" >Register</button>
+    </form>
+{% endblock %}

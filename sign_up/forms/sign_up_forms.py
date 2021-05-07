@@ -3,6 +3,8 @@ from django import forms
 from sign_up.models import createAccount
 
 
+
+
 class createAccountForm(ModelForm):
     image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
