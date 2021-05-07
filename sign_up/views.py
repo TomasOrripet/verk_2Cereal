@@ -1,19 +1,28 @@
 from django.shortcuts import render, redirect
+from django.forms import forms
 from django.http import HttpResponse
 from sign_up.forms.forms import RegisterForm
 from sign_up.forms.sign_up_forms import createAccountForm
 from sign_up.models import createAccountImage, userAndPassword
+from django.contrib.auth.models import User
 
 
 def index(request):
     return render(request, 'sign_up/index.html')
 
 def info(request):
+
     if request.method == 'POST':
         form = createAccountForm(data=request.POST)
         if form.is_valid():
             account = form.save()
-            user = userAndPassword(username=request.POST['username'], password=request.POST['password'], account=account)
+            user = User.objects.create_user(
+                username=request.POST['username'],
+                password=request.POST['password'],
+                first_name=request.POST['first_name'],
+                last_name=request.POST['last_name'],
+
+            )
             user.save()
             inf_image = createAccountImage(image=request.POST['image'], account=account)
             inf_image.save()

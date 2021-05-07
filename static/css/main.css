@@ -85,6 +85,7 @@ button:hover, li:hover, a:hover{
 .btn-default:focus, .btn-default:hover {
     background-color: #3669c4;
     color: white;
+    text-shadow: none;
     background-position: 0 -15px;
 }
 

@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     # http://localhost:8000/sign in
     path('', views.index, name='cereal-index'),
-    path('createCereal', views.createCereal, name="createCereal")
+    path('createType', views.createType, name='createType'),
+    path('createCereal', views.createCereal, name="createCereal"),
 ]

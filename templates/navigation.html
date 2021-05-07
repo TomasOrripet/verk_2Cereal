@@ -20,6 +20,8 @@
         <li><a href="{% url 'cutlery-index' %}">Cutlery</a></li>
         <li><a href="{% url 'clothes-index' %}">Clothes</a></li>
         <li><a href="{% url 'createCereal' %}">createCereal</a></li>
+        <li><a href="{% url 'createType' %}">createCerealType</a></li>
+
 
 
         </li>
@@ -32,6 +34,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
+              <li><a href="{% url 'account-index' %}">Account</a></li>
               <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
               <li><a href="{% url 'info' %}">Sign up</a></li>
