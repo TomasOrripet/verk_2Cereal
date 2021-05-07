@@ -4,6 +4,9 @@ from django.db import models
 class createType(models.Model):
     typeName = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.typeName
+
 
 
 class createCereal(models.Model):
@@ -12,4 +15,3 @@ class createCereal(models.Model):
     cerealContents = models.CharField(max_length=255)
     price = models.FloatField()
     type = models.ForeignKey(createType, on_delete=models.CASCADE)
-
