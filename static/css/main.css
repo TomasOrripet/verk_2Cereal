@@ -38,6 +38,7 @@ body{
     font-weight: bold;
     color: white;
     transition: all 0.7s;
+    padding-bottom: 0px;
 }
 
 button, li, .btn-default, .btn{
