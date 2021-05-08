@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-
+from cereal import models
 from cereal.forms import cereal_form
 
 
 def index(request):
-    return render(request, 'cereal/index.html')
+    context = {'cereals': models.createCereal.objects.all()}
+    return render(request, 'cereal/index.html', context)
 
 
 def createCereal(request):

@@ -7,31 +7,10 @@
     </div>
     <div class="temps">
         <div class="itemcont"/>
-            <div>
-                <h4 class="items">this is an item1</h4>
-                <button data-cereal="{{ cereal.id }}" data-action="add" class="addtocart update-cart">add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item2</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item3</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item4</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item5</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item6</h4>
-                <button>add to cart</button>
-            </div>
-        </div>
-    {% include 'filter_by.html' %}
+            {% for cereal in cereals %}
+                {% include 'cereal/singleCereal.html' with cereal=cereal %}
+
+            {% endfor %}
     </div>
+    {% include 'filter_by.html' %}
 {% endblock %}
