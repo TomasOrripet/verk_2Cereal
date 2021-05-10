@@ -22,8 +22,15 @@ function updateUserOrder(cerealId,action){
     fetch(url, {
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'X-CSFRToken':csrftoken
         },
         body:JSON.stringify({'cerealId': cerealId,'action': action})
     })
+        .then((response) => {
+            return response.json()
+        })
+    .then((data) => {
+        console.log('data:',data)
+        })
 }
