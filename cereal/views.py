@@ -21,17 +21,6 @@ def createCereal(request):
         'form': form
     })
 
-def createType(request):
-    if request.method == 'POST':
-        form = cereal_form.cerealCreateType(data=request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('cereal-index')
-    else:
-        form = cereal_form.cerealCreateType()
-    return render(request, 'cereal/createType.html', {
-        'form': form
-    })
 
 def createManufacturer(request):
     if request.method == 'POST':
