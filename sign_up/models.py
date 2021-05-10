@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 # Create your models here.
 
@@ -13,8 +14,8 @@ class createAccount(models.Model):
 
 
 class createAccountImage(models.Model):
-    image = models.CharField(max_length=9999)
-    account = models.ForeignKey(createAccount, on_delete=models.CASCADE)
+    image = models.CharField(max_length=99999, null=True)
+    account = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class userAndPassword(models.Model):

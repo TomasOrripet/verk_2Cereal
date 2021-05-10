@@ -1,12 +1,10 @@
 from django.forms import ModelForm, widgets
 from django import forms
-from sign_up.models import createAccount
-
-
+from sign_up.models import createAccount, createAccountImage
 
 
 class createAccountForm(ModelForm):
-    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
