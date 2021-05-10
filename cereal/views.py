@@ -5,7 +5,7 @@ from django.http import JsonResponse
 
 
 def index(request):
-    context = {'cereals': models.createCereal.objects.all()}
+    context = {'cereals': models.cereal.objects.all()}
     return render(request, 'cereal/index.html', context)
 
 
