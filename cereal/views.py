@@ -5,33 +5,22 @@ from django.http import JsonResponse
 
 
 def index(request):
-    context = {'cereals': models.createCereal.objects.all()}
+    context = {'cereals': models.cereal.objects.all()}
     return render(request, 'cereal/index.html', context)
 
 
-def createCereal(request):
+def cereal(request):
     if request.method == 'POST':
-        form = cereal_form.cerealCreateForm(data=request.POST)
+        form = cereal_form.cerealForm(data=request.POST)
         if form.is_valid():
             form.save()
             return redirect('cereal-index')
     else:
-        form = cereal_form.cerealCreateForm()
+        form = cereal_form.cerealForm()
     return render(request, 'cereal/createCereal.html', {
         'form': form
     })
 
-def createType(request):
-    if request.method == 'POST':
-        form = cereal_form.cerealCreateType(data=request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('cereal-index')
-    else:
-        form = cereal_form.cerealCreateType()
-    return render(request, 'cereal/createType.html', {
-        'form': form
-    })
 
 def createManufacturer(request):
     if request.method == 'POST':
