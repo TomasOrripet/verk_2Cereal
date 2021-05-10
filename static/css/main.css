@@ -13,6 +13,18 @@
     padding: 8rem;
     border: 5px solid black;
     margin: 1rem;
+    background-color: #F7FCFF;
+    font-weight: bold;
+}
+
+.cereal_items {
+    align-content: center;
+    border: 5px solid black;
+    background-color: #F7FCFF;
+    font-weight: bold;
+    width: 20%;
+    margin: 5px;
+    padding: 1rem;
 }
 
 .itemcont{
