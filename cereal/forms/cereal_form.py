@@ -16,6 +16,8 @@ class cerealForm(ModelForm):
             'amountInStock': widgets.NumberInput(attrs={'class': 'form-control'}),
             'price': widgets.NumberInput(attrs={'class': 'form-control'}),
             'image': widgets.TextInput(attrs={'class': 'form-control'}),
+            'type': widgets.TextInput(attrs={'class': 'form-control'}),
+            'manufacturer': widgets.TextInput(attrs={'class': 'form-control'}),
         }
 
 class cerealCreateType(ModelForm):
