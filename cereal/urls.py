@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index, name='cereal-index'),
     path('createType', views.createType, name='createType'),
     path('createCereal', views.createCereal, name="createCereal"),
+    path('update_item', views.updateItem, name='update_item')
 ]
