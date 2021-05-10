@@ -28,6 +28,10 @@
 
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+
 body{
     background-color: #F7FCFF;
     font-family: 'Century Gothic';
@@ -98,11 +102,15 @@ h2{
     padding: 1rem;
     margin-right: 60%;
     background-color: #71AEE5;
+    display: inline-block;
+    width: 100%;
 }
 .temps{
-    display: flex;
+    display: block;
     flex-direction: row;
     justify-content: space-around;
+    width: 86%;
+    margin-left: 7%;
 }
 
 .filterby{
@@ -138,4 +146,8 @@ p.hp_text{
     transition: all 0.4s;
     background-color: #519de1;
     text-decoration: none;
+}
+#cartimg {
+    width: 50px;
+    float: left;
 }
