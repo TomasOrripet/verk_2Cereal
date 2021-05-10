@@ -6,5 +6,5 @@ urlpatterns = [
     path('', views.index, name='cereal-index'),
     path('createManufacturer', views.createManufacturer, name='createManufacturer'),
     path('cereal', views.cereal, name="cereal"),
-    path('update_item', views.updateItem, name='update_item')
+    path('update_item', views.update_item, name='update_item    ')
 ]
