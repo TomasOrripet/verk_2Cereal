@@ -15,6 +15,7 @@ class createCereal(models.Model):
     cerealContents = models.CharField(max_length=255)
     price = models.FloatField()
     image = models.CharField(max_length=9999, null=True)
+    description = models.CharField(max_length=999, null=True)
     type = models.ForeignKey(createType, on_delete=models.CASCADE)
 
     def __str__(self):
