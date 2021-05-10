@@ -27,7 +27,7 @@ class cereal(models.Model):
     description = models.CharField(max_length=999, null=True)
     amountInStock = models.FloatField()
     price = models.FloatField()
-    image = models.CharField(max_length=9999, null=True)
+    image = models.CharField(max_length=99999, null=True)
     type = models.ForeignKey(type, on_delete=models.CASCADE)
     manufacturer = models.ForeignKey(manufacturer, on_delete=models.CASCADE)
     nutritionValue = models.ForeignKey(nutritionValue, on_delete=models.CASCADE)

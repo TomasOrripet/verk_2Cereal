@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cereal.apps.CerealConfig',
     'sign_up',
+    'cart'
 ]
 
 MIDDLEWARE = [
