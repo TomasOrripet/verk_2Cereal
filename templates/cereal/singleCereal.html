@@ -1,6 +1,6 @@
-
 <div class="items">
-    <a href="#">
+    <a href="{% url 'cereal_info' %}" content="{{ cereal.id }}" >
+        <h1>{{ cereal.id }}</h1>
         <img class="cerealImage" src="{{ cereal.image }}" style="width: 150px"/>
     </a>
     <h4>{{ cereal.cerealName }}</h4>
