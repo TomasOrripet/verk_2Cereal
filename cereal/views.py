@@ -13,7 +13,7 @@ def createCereal(request):
     if request.method == 'POST':
         form = cereal_form.cerealCreateForm(data=request.POST)
         if form.is_valid():
-            cereal = form.save()
+            form.save()
             return redirect('cereal-index')
     else:
         form = cereal_form.cerealCreateForm()
@@ -29,6 +29,18 @@ def createType(request):
             return redirect('cereal-index')
     else:
         form = cereal_form.cerealCreateType()
+    return render(request, 'cereal/createType.html', {
+        'form': form
+    })
+
+def createManufacturer(request):
+    if request.method == 'POST':
+        form = cereal_form.cerealCreateManufacturer(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('cereal-index')
+    else:
+        form = cereal_form.cerealCreateManufacturer()
     return render(request, 'cereal/createType.html', {
         'form': form
     })
