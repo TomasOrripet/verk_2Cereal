@@ -42,7 +42,7 @@ def cerealInfo(request):
     context = {'cereals': models.cereal.objects.all()}
     return render(request, 'cereal/cerealInfo.html', context)
 
-def update_item(request):
+def updateItem(request):
     data = json.loads(request.body)
     cerealName = data['cerealName']
     cerealId = data['cerealId']
@@ -50,8 +50,7 @@ def update_item(request):
     print('action:', action)
     print('cerealId:', cerealId)
     print('cerealName:', cerealName)
-
-    if action == 'add':
+    if action == 'add' and orderCerealItem.quantity == 0:
         orderCerealItem.quantity = (orderCerealItem.quantity + 1)
     elif action == 'remove':
         orderCerealItem.quantity = (orderCerealItem.quantity - 1)
