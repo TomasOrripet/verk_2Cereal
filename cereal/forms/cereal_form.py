@@ -13,6 +13,8 @@ class cerealCreateForm(ModelForm):
             'cerealName': widgets.TextInput(attrs={'class': 'form-control'}),
             'cerealNutritionalValue': widgets.TextInput(attrs={'class': 'form-control'}),
             'cerealContents': widgets.TextInput(attrs={'class': 'form-control'}),
+            'image': widgets.TextInput(attrs={'class': 'form-control'}),
+            'description': widgets.TextInput(attrs={'class': 'form-control'}),
             'price': widgets.NumberInput(attrs={'class': 'form-control'}),
         }
 
