@@ -3,7 +3,7 @@ from cereal.models import cereal, type, manufacturer
 
 
 
-class cerealCreateForm(ModelForm):
+class cerealForm(ModelForm):
 
     class Meta:
         model = cereal
