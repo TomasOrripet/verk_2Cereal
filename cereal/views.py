@@ -9,14 +9,14 @@ def index(request):
     return render(request, 'cereal/index.html', context)
 
 
-def createCereal(request):
+def cereal(request):
     if request.method == 'POST':
-        form = cereal_form.cerealCreateForm(data=request.POST)
+        form = cereal_form.cerealForm(data=request.POST)
         if form.is_valid():
             form.save()
             return redirect('cereal-index')
     else:
-        form = cereal_form.cerealCreateForm()
+        form = cereal_form.cerealForm()
     return render(request, 'cereal/createCereal.html', {
         'form': form
     })
