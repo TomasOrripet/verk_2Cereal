@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from cereal.models import *
+
+admin.site.register(cereal)
+admin.site.register(manufacturer)
+admin.site.register(type)
+admin.site.register(nutritionValue)
