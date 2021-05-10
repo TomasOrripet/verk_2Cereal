@@ -1,6 +1,7 @@
+
 <title>Cereal</title>
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <div class="title">
         <h2>Cereals</h2>
@@ -9,7 +10,6 @@
         <div class="itemcont"/>
             {% for cereal in cereals %}
                 {% include 'cereal/singleCereal.html' with cereal=cereal %}
-
             {% endfor %}
     </div>
     {% include 'filter_by.html' %}

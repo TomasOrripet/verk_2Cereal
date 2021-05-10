@@ -11,11 +11,9 @@ def index(request):
     return render(request, 'sign_up/index.html')
 
 def info(request):
-
     if request.method == 'POST':
         form = createAccountForm(data=request.POST)
         if form.is_valid():
-            account = form.save()
             user = User.objects.create_user(
                 username=request.POST['username'],
                 password=request.POST['password'],
@@ -24,8 +22,8 @@ def info(request):
 
             )
             user.save()
-            inf_image = createAccountImage(image=request.POST['image'], account=account)
-            inf_image.save()
+            img = createAccountImage(image=request.POST['image'])
+            img.save()
             return redirect('account-index')
     else:
         form = createAccountForm()

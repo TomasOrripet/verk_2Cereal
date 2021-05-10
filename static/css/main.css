@@ -48,7 +48,7 @@ button, li, .btn-default, .btn{
     background-image: none;
     transition: all 0.7s;
 }
-button:hover, li:hover, a:hover{
+button:hover, li:hover, .a-button:hover{
     transition: all 0.4s;
     background-color: #519de1;
 }
@@ -61,18 +61,18 @@ button:hover, li:hover, a:hover{
     color: #ffffff;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
+.navbar-default .navbar-nav>.active>.a-button, .navbar-default .navbar-nav>.open>.a-button {
     background-image: linear-gradient(to bottom,#3669c4 0, #2d5db1 100%);
     color: white;
     transition: all 0.7s;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav>li>.a-button {
     color: white;
     transition: all 0.7s;
 }
 
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>.a-button:focus, .navbar-default .navbar-nav>li>.a-button:hover {
     color: white;
     background-color: transparent;
 }
@@ -108,4 +108,34 @@ h2{
 .filterby{
     padding-left: 3rem;
     padding-right: 1rem;
+
+}
+
+.hp_text{
+    text-align: center;
+}
+
+p.hp_text{
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: large;
+}
+
+#hp_button{
+    border: 2px solid black;
+    padding: 2em;
+    text-align: center;
+    display: inline-block;
+    margin-left: 42%;
+    width: 16%;
+    margin-right: 42%;
+    background-color: #71AEE5;
+    color: white;
+    font-size: large;
+}
+
+#hp_button:hover{
+    transition: all 0.4s;
+    background-color: #519de1;
+    text-decoration: none;
 }
