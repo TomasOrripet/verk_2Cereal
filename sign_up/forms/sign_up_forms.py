@@ -6,7 +6,7 @@ from sign_up.models import createAccount
 
 
 class createAccountForm(ModelForm):
-    image = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    image = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     password = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
@@ -21,6 +21,5 @@ class createAccountForm(ModelForm):
             'city': widgets.TextInput(attrs={'class': 'form-control'}),
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'zip': widgets.TextInput(attrs={'class': 'form-control'}),
-            'price': widgets.NumberInput(attrs={'class': 'form-control'}),
         }
 
