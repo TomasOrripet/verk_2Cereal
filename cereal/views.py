@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from cereal import models
 from cereal.forms import cereal_form
+from django.http import JsonResponse
 
 
 def index(request):
@@ -32,3 +33,5 @@ def createType(request):
         'form': form
     })
 
+def updateItem(request):
+    return JsonResponse('Item was added', safe=False)
