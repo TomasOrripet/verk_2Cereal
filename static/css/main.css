@@ -118,7 +118,7 @@ h2{
     width: 100%;
 }
 .temps{
-    display: block;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 86%;
