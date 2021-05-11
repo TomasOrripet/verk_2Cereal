@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-
+from django.views.generic import ListView
 from cart.models import orderCerealItem, order
+from cereal.models import cereal
 from cart import models
 from cereal.forms import cereal_form
 from django.http import JsonResponse
@@ -11,7 +12,7 @@ def index(request):
     return render(request, 'cereal/index.html', context)
 
 
-def cereal(request):
+def Cereal(request):
     if request.method == 'POST':
         form = cereal_form.cerealForm(data=request.POST)
         if form.is_valid():
@@ -55,3 +56,10 @@ def updateItem(request):
     elif action == 'remove':
         orderCerealItem.quantity = (orderCerealItem.quantity - 1)
     return JsonResponse("Item was added", safe=False)
+
+def searchResultCerealView(request):
+    query = request.POST['search']
+    context = {'cereals': cereal.objects.filter(cerealName__icontains=query)}
+    return render(request, 'cereal/index.html', context)
+
+
