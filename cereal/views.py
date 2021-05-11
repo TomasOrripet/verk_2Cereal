@@ -42,7 +42,7 @@ def cerealInfo(request):
     context = {'cereals': models.cereal.objects.all()}
     return render(request, 'cereal/cerealInfo.html', context)
 
-def update_item(request):
+def updateItem(request):
     data = json.loads(request.body)
     cerealName = data['cerealName']
     cerealId = data['cerealId']
