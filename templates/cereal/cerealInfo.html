@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {{ cereals }}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="title">
+    <h2>{{ cereal.cerealName }}</h2>
+    </div>
+    <h3>{{ cereal.description }}</h3>
+    <div style="display: flex">
+        <img class="cerealImage" src="{{ cereal.image }}" style="width: 150px"/>
+        <h2 style="padding-left: 2rem">price: {{ cereal.price }}</h2>
+    </div>
+
+    <h4>{{ cereal.cerealContents }}</h4>
+{% endblock %}
