@@ -3,7 +3,15 @@
     {% block content %}
         <form class="" action="{% url 'info' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Create Account</legend>
+            {{ form }}
+        </fieldset>
         <input type="submit" value="Create" class="" style="clear:both; margin:10px 0"/>
         </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">Do You Have An Account? <a class="ml-2" href="#">Log In Now</a>
+            </small>
+        </div>
     {% endblock %}
+
