@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.forms import forms
-from django.http import HttpResponse
+from account.models import Profile
 from sign_up.forms.forms import RegisterForm
 from sign_up.forms.sign_up_forms import createAccountForm
-from sign_up.models import createAccountImage, userAndPassword
 from django.contrib.auth.models import User
 
 
@@ -19,12 +17,13 @@ def info(request):
                 password=request.POST['password'],
                 first_name=request.POST['first_name'],
                 last_name=request.POST['last_name'],
-
             )
             user.save()
-            img = createAccountImage(image=request.POST['image'])
-            img.save()
-            return redirect('account-index')
+            usercreate = Profile.objects.create(
+                image=request.POST['image'],
+            )
+            usercreate.save()
+            return redirect('homepage-index')
     else:
         form = createAccountForm()
     return render(request, 'sign_up/info.html', {
