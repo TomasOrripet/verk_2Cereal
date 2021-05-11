@@ -118,7 +118,7 @@ h2{
     width: 100%;
 }
 .temps{
-    display: block;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 86%;
@@ -162,4 +162,14 @@ p.hp_text{
 #cartimg {
     width: 50px;
     float: left;
+}
+
+.buybutton{
+    float: right;
+    margin-top: 5px;
+    padding: 1rem;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
 }
