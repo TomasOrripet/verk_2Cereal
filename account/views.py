@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from account.models import Profile
+
+from django.contrib.auth.models import User
 
 
 
@@ -12,5 +13,5 @@ def index(request):
 
 @login_required
 def user_views(request, id):
-    content = {"user": get_object_or_404(Profile, user_id=id)}
+    content = {"user": get_object_or_404(User, id=id)}
     return render(request, 'account/userInfo.html', content)
