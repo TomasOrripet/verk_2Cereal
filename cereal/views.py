@@ -62,4 +62,7 @@ def searchResultCerealView(request):
     context = {'cereals': cereal.objects.filter(cerealName__icontains=query)}
     return render(request, 'cereal/index.html', context)
 
+def orderByPrice(request):
+    context = {'cereals': cereal.objects.filter(cerealName__icontains='coco')}
+    return render(request, 'cereal/index.html', context)
 
