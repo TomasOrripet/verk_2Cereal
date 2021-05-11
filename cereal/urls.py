@@ -9,5 +9,5 @@ urlpatterns = [
     path('priceResult', views.orderByPrice, name='priceResult'),
     path('cereal', views.Cereal, name="cereal"),
     path('update_item', views.updateItem, name='update_item'),
-    path('content', views.cerealInfo, name='cereal_info')
+    path('<int:id>', views.cerealInfo, name='cereal_info')
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 from cart.models import orderCerealItem, order
 from cereal.models import cereal
@@ -39,8 +39,8 @@ def createManufacturer(request):
 
 
 
-def cerealInfo(request):
-    context = {'cereals': models.cereal.objects.all()}
+def cerealInfo(request, id):
+    context = {'cereal': get_object_or_404(cereal, pk=id)}
     return render(request, 'cereal/cerealInfo.html', context)
 
 def updateItem(request):
