@@ -1,0 +1,16 @@
+
+<title>Cereal</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="title">
+        <h2>Cereals</h2>
+    </div>
+    <div class="temps">
+        <div class="itemcont"/>
+            {% csrf_token %}
+            {% for cereal in object_list  %}
+                {% include 'cereal/singleCereal.html' with cereal=cereal %}
+            {% endfor %}
+    </div>
+{% endblock %}
