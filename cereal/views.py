@@ -50,10 +50,7 @@ def updateItem(request):
     print('action:', action)
     print('cerealId:', cerealId)
     print('cerealName:', cerealName)
-
-
-
-    if action == 'add':
+    if action == 'add' and orderCerealItem.quantity == 0:
         orderCerealItem.quantity = (orderCerealItem.quantity + 1)
     elif action == 'remove':
         orderCerealItem.quantity = (orderCerealItem.quantity - 1)
