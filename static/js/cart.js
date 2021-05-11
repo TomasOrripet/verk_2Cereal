@@ -2,28 +2,38 @@ var updateBtn = document.getElementsByClassName('update-cart')
 for ( i = 0; i < updateBtn.length; i++) {
     console.log("button press")
     updateBtn[i].addEventListener('click', function(){
-        var cerealId = this.dataset.cereal
+        var cerealName = this.dataset.cerealname
+        var cerealId = this.dataset.cerealid
         var action = this.dataset.action
-        console.log('cerealId:',cerealId, 'action:' , action)
+        console.log('cerealName:',cerealName,'cerealId:',cerealId, 'action:' , action)
 
         console.log('User:',user)
         if ( user == 'AnonymousUser'){
             console.log('User is anonymous')
         }else{
-            updateUserOrder(cerealId,action)
+            updateUserOrder(cerealName,cerealId,action)
         }
     })
 }
-function updateUserOrder(cerealId,action){
+function updateUserOrder(cerealName,cerealId,action){
     console.log('User is authenticated, sending data....')
 
-    var url = 'update_item/'
+    var url = '/homepage/cereal/update_item'
+    console.log(url)
 
     fetch(url, {
+        credentials: 'include',
         method:'POST',
         headers:{
+            'X-CSRFToken':csrftoken,
             'Content-Type':'application/json'
         },
-        body:JSON.stringify({'cerealId': cerealId,'action': action})
+        body:JSON.stringify({'cerealName':cerealName,'cerealId': cerealId,'action': action})
     })
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            console.log('data:',data)
+        })
 }

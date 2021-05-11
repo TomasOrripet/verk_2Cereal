@@ -8,6 +8,7 @@
     </div>
     <div class="temps">
         <div class="itemcont"/>
+            {% csrf_token %}
             {% for cereal in cereals %}
                 {% include 'cereal/singleCereal.html' with cereal=cereal %}
             {% endfor %}
