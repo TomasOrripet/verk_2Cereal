@@ -1,6 +1,5 @@
 <title>Sign in</title>
 {% extends 'base.html' %}
-
 {% block content %}
         <form method="post" action="{% url 'sign_in-index' %}" class="form form-horizontal">
             {% csrf_token %}
@@ -13,8 +12,7 @@
             </div>
         </form>
         <div class="border-top pt-3">
-            <small class="text-muted">
-                Do You Need An Account? <a class="ml-3" href="#">Sign Up Now</a>
+            <small class="text-muted">Do You Need An Account? <a class="ml-2" href="#">Sign Up Now</a>
             </small>
         </div>
 {% endblock %}
