@@ -163,3 +163,13 @@ p.hp_text{
     width: 50px;
     float: left;
 }
+
+.buybutton{
+    float: right;
+    margin-top: 5px;
+    padding: 1rem;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+}
