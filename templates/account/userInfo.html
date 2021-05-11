@@ -1,0 +1,8 @@
+<title>Account</title>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="test">
+        <h2>{{ user.id }}</h2>
+        <img class="cerealImage" src="{{ user.image }}" style="width: 150px"/>
+    </div>
+{% endblock %}
