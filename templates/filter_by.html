@@ -1,11 +1,9 @@
 <div class="orderby">
-    <form method="POST" action="{% url 'priceResult' %}">
-        <label for="value">Order by:</label>
-        <input type="checkbox" name="price">
-        <label>price</label>
-        <input type="checkbox" name="name">
-
-    </form>
+    <label for="value">Order by:</label>
+    <select id="value" name="value">
+    <option value="price">Price</option>
+    <option value="name">Name</option>
+</select>
 </div>
 <div class="filterby">
     <p>Filter by type</p>
