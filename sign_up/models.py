@@ -4,6 +4,7 @@ from django.conf import settings
 
 # Create your models here.
 
+
 class createAccount(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
