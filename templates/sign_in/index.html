@@ -2,10 +2,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post" action="{% url 'sign_in-index' %}" class="form form-horizontal">
-        {% csrf_token %}
-        {{ form }}
-    <input type="submit" class="btn btn-primary" value="Login">
-    </form>
+        <form method="post" action="{% url 'sign_in-index' %}" class="form form-horizontal">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log in</legend>
+                {{ form }}
+            </fieldset>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Do You Need An Account? <a class="ml-3" href="#">Sign Up Now</a>
+            </small>
+        </div>
 {% endblock %}
+
+
 

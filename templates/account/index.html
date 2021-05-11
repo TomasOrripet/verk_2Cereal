@@ -3,7 +3,9 @@
 {% block content %}
     <div class="test">
         <h2>{{ user.username }}</h2>
-        <form action="sign_in" method="get">
+        <h2>{{ user.email }}</h2>
+        <h2>{{ profile.image }}</h2>
+        <form action="{{ user.username }}" method="get">
             <button type="submit" >Submit</button>
         </form>
     </div>
