@@ -23,8 +23,14 @@ class order(models.Model):
 class orderCerealItem(models.Model):
     cereal = models.ForeignKey(cereal, on_delete=models.SET_NULL, blank=True, null=True)
     order = models.ForeignKey(order, on_delete=models.SET_NULL, blank=True, null=True)
-    quantity = models.IntegerField( blank=True, null=True)
+    quantity = models.IntegerField(blank=True, null=True)
 
     def get_total(self):
         total = self.product.price * self.quantity
         return total
+
+class userCart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    cereal = models.ForeignKey(cereal, on_delete=models.SET_NULL, blank=True, null=True)
+
+

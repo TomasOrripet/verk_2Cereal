@@ -1,40 +1,26 @@
+
 <title>Toys</title>
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <div class="title">
         <h2>Toys</h2>
+        <form class="navbar-form navbar-left" action="{% url 'searchResult' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="search" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
     </div>
-    <div class = temps>
+    <div class="temps">
         <div class="itemcont"/>
-            <div>
-                <h4 class="items">this is an item1</h4>
-                <button class="addtocart">add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item2</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item3</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item4</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item5</h4>
-                <button>add to cart</button>
-            </div>
-            <div>
-                <h4 class="items">this is an item6</h4>
-                <button>add to cart</button>
-            </div>
+            {% csrf_token %}
+            {% for toy in toys %}
+                {% include 'toys/singleToy.html' with toy=toy %}
+            {% endfor %}
         </div>
     {% include 'filter_by.html' %}
-    </div>
-
-
+</div>
 
 {% endblock %}
