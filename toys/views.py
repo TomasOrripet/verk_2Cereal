@@ -23,4 +23,4 @@ def CreateToy(request):
 
 def toyInfo(request, id):
     context = {'toys': get_object_or_404(toys, pk=id)}
-    return render(request, 'toys/index.html', context)
+    return render(request, 'toys/toysInfo.html', context)
