@@ -161,6 +161,7 @@ p.hp_text{
     transition: all 0.4s;
     background-color: #519de1;
     text-decoration: none;
+    float: left;
 }
 #cartimg {
     width: 50px;
