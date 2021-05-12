@@ -1,5 +1,5 @@
 <div class="orderby">
-    <label for="value">Order by:</label>
+    <label >Order by:</label>
     <form action="{% url 'priceResult' %}" method="POST">
         {% csrf_token %}
         <select id="value" name="orderby">
@@ -8,20 +8,21 @@
             <option value="name_a_z" name="name_a_z">Name (a-z)</option>
             <option value="name_z_a" name="name_z_a">Name (z-a)</option>
         </select>
-        <input type="submit" value="filter">
+        <input type="submit" value="filter" class="btn btn-primary">
     </form>
 </div>
 <div class="filterby">
     <form action="{% url 'filterResult' %}" method="POST" name="filterBy">
         {% csrf_token %}
-        <p>Filter by type</p>
+        <label >Filter by type:</label><br>
         <select id="value" name="type">
             <option id="none" name="none" value="none">----SELECT----</option>
             <option id="healthy" name="healthy" value="Healthy">Healthy</option>
             <option id="sugary" name="sugary" value="Sugary">Sugary</option>
         </select>
-        <p>Filter by Manufaturce</p>
-        <select id="value" name="manufacturer">
+        <br>
+        <label >Filter by Manufaturce:</label>
+        <select id="value" name="manufacturer" class="dropDown">
             <option id="none" name="none" value="none">---------SELECT---------</option>
             <option id="generalMills" name="generalMills" value="General Mills"> General Mills</option>
             <option id="kellogg" name="kellogg" value="Kellogg Company">Kellogg Company</option>
@@ -31,6 +32,6 @@
             <option id="Barbara's Bakery" name="Barbara's Bakery" value="Barbara's Bakery">Barbara's Bakery</option>
             <option id="Weetabix Limited" name="Weetabix Limited" value="Weetabix Limited">Weetabix Limited</option>
         </select>
-        <input type="submit" value="filter">
+        <input type="submit" value="filter" class="btn btn-primary">
     </form>
 </div>

@@ -94,8 +94,6 @@ def filterBy(request):
 
         else:
             context1 = cereal.objects.filter(type_id=0)
-        print(context1)
-        print(context2)
         list1 = []
         list2 = []
         querySet2 = cereal.objects.none()
@@ -103,8 +101,6 @@ def filterBy(request):
             list2.append(i)
         for j in context1:
             list1.append(j)
-        print(list1)
-        print(list2)
         if len(list1) != 0 and len(list2) != 0:
             for x in list1:
                 if x in list2:
