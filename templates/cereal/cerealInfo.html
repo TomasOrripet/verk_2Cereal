@@ -4,11 +4,12 @@
     <div class="title">
     <h2>{{ cereal.cerealName }}</h2>
     </div>
-    <h3>{{ cereal.description }}</h3>
+    <h3>Description</h3>
+    <h4>{{ cereal.description }}</h4>
     <div style="display: flex">
         <img class="cerealImage" src="{{ cereal.image }}" style="width: 150px"/>
         <h2 style="padding-left: 2rem">price: {{ cereal.price }} &#36;</h2>
     </div>
-
+    <h3>Cereal Content</h3>
     <h4>{{ cereal.cerealContents }}</h4>
 {% endblock %}

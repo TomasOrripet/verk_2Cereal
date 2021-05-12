@@ -14,13 +14,14 @@
 <div class="filterby">
     <form action="{% url 'filterResult' %}" method="POST" name="filterBy">
         {% csrf_token %}
-        <label >Filter by type</label>
-        <select id="value" name="type" class="dropDown">
+        <label >Filter by type:</label><br>
+        <select id="value" name="type">
             <option id="none" name="none" value="none">----SELECT----</option>
             <option id="healthy" name="healthy" value="Healthy">Healthy</option>
             <option id="sugary" name="sugary" value="Sugary">Sugary</option>
         </select>
-        <label >Filter by Manufaturce</label>
+        <br>
+        <label >Filter by Manufaturce:</label>
         <select id="value" name="manufacturer" class="dropDown">
             <option id="none" name="none" value="none">---------SELECT---------</option>
             <option id="generalMills" name="generalMills" value="General Mills"> General Mills</option>
