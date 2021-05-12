@@ -151,7 +151,6 @@ p.hp_text{
     background-color: #71AEE5;
     color: white;
     font-size: large;
-    margin-bottom: 330px;
 }
 
 .border-top.pt-3{
@@ -184,7 +183,7 @@ p.hp_text{
 
 .footer{
     display: inline-flex;
-    background-color: #3669c4;
+    border-top: 5px solid #2d5db1;
     text-decoration: none;
     margin-top: 11%;
     padding-left: 1rem;
@@ -192,14 +191,13 @@ p.hp_text{
     bottom: 0px;
     left: 0px;
     width: 100%;
-    color: white;
+    color: #2d5db1;
 }
 
 .footer-brand{
     font-size: 40px;
     font-weight: bold;
     padding-bottom: 0px;
-    color:white;
 }
 
 .footer-brand.a-button:hover{
