@@ -1,0 +1,13 @@
+<title>Toys</title>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="title">
+    <h2>{{ toys.toyName }}</h2>
+    </div>
+    <h3>Description</h3>
+    <h4>{{ toys.toyInfo }}</h4>
+    <div style="display: flex">
+        <img class="cerealImage" src="{{ toys.toyImage }}" style="width: 150px"/>
+        <h2 style="padding-left: 2rem">price: {{ toys.price }} &#36;</h2>
+    </div>
+{% endblock %}
