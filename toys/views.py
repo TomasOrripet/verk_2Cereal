@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from toys.forms import toyForms
 from toys.models import toys
 
 
 # Create your views here.
 def index(request):
-    return render(request, "toys/index.html")
+    return render(request, 'toys/index.html')
 
 
 
@@ -20,3 +20,7 @@ def CreateToy(request):
         return render(request, 'toys/createToys.html', {
             'form': form
         })
+
+def toyInfo(request, id):
+    context = {'toys': get_object_or_404(toys, pk=id)}
+    return render(request, 'toys/index.html', context)
