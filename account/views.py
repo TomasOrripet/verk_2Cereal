@@ -29,4 +29,6 @@ def index(request):
 @login_required
 def user_views(request, id):
     content = {"user": get_object_or_404(User, id=id)}
-    return render(request, 'account/userInfo.html', content)
+    if request.user.id == id:
+        return render(request, 'account/userInfo.html', content)
+    return redirect('homepage-index')

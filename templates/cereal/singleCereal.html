@@ -3,5 +3,9 @@
         <img class="cerealImage" src="{{ cereal.image }}" style="width: 150px"/>
     </a>
     <h4>{{ cereal.cerealName }}</h4>
-    <button data-cerealname="{{ cereal.cerealName }}"data-cerealid="{{ cereal.id }}" data-action="add" class="btn update-cart">Add To Cart</button>
+        {% csrf_token %}
+    <a href="/homepage/cart/{{ cereal.id }}" method="POST">
+            <button data-cerealname="{{ cereal.cerealName }}"data-cerealid="{{ cereal.id }}" data-action="add" class="btn update-cart">Add To Cart</button>
+
+    </a>
 </div>
