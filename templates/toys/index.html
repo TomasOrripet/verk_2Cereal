@@ -16,8 +16,8 @@
     <div class="temps">
         <div class="itemcont"/>
             {% csrf_token %}
-            {% for toy in toys %}
-                {% include 'toys/singleToy.html' with toy=toy %}
+            {% for toys in toyss %}
+                {% include 'toys/singleToy.html' with toys=toys %}
             {% endfor %}
         </div>
     {% include 'filter_by.html' %}
