@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from toys.forms import toyForms
+from toys.models import toys
 
 
 # Create your views here.
