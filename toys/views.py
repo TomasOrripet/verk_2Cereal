@@ -25,3 +25,16 @@ def CreateToy(request):
 def toyInfo(request, id):
     context = {'toys': get_object_or_404(toys, pk=id)}
     return render(request, 'toys/toysInfo.html', context)
+
+def orderByPrice(request):
+    if request.method == 'POST':
+        query = request.POST['orderby']
+        if query == 'name_a_z':
+            context = {'toys': toys.objects.order_by('toyName')}
+        elif query == 'name_z_a':
+            context = {'toys': toys.objects.order_by('-toyName')}
+        elif query == 'price_from_low':
+            context = {'toys': toys.objects.order_by('price')}
+        elif query == 'price_from_high':
+            context = {'toys': toys.objects.order_by('-price')}
+        return render(request, 'toys/index.html', context)
