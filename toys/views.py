@@ -5,7 +5,8 @@ from toys.models import toys
 
 # Create your views here.
 def index(request):
-    return render(request, 'toys/index.html')
+    context = {'toys': toys.objects.all()}
+    return render(request, 'toys/index.html', context)
 
 
 
