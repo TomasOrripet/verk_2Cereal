@@ -145,17 +145,15 @@ p.hp_text{
     padding: 2em;
     text-align: center;
     display: inline-block;
-    margin-left: 42%;
-    width: 16%;
-    margin-right: 42%;
+    margin: 1rem;
     background-color: #71AEE5;
     color: white;
     font-size: large;
-    margin-bottom: 330px;
 }
-
-.border-top.pt-3{
-    margin-bottom: 410px;
+.borderButton{
+    margin-bottom: 110px;
+    display: flex;
+    justify-content: center;
 }
 
 #hp_button:hover{
@@ -185,7 +183,7 @@ p.hp_text{
 
 .footer{
     display: inline-flex;
-    background-color: #3669c4;
+    border-top: 5px solid #2d5db1;
     text-decoration: none;
     margin-top: 11%;
     padding-left: 1rem;
@@ -193,14 +191,14 @@ p.hp_text{
     bottom: 0px;
     left: 0px;
     width: 100%;
-    color: white;
+    color: #2d5db1;
+    background-color: #a8c5e2;
 }
 
 .footer-brand{
     font-size: 40px;
     font-weight: bold;
     padding-bottom: 0px;
-    color:white;
 }
 
 .footer-brand.a-button:hover{
