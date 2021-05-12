@@ -1,18 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from account.form.form import ImageForm
+from account.form.form import imageForm
+from account.models import Profile
+from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.models import User
 
-def image_upload_view(request):
+
+@login_required
+def ImageForm(request, id):
     if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
+        form = imageForm(data=request.POST)
         if form.is_valid():
             form.save()
-            profilePic = form.instance
-            return render(request, 'userInfo', {'form': form, 'profilePic': profilePic})
+            content = {"user": get_object_or_404(User, id=id)}
+            return render(request, 'account/userInfo.html', content)
     else:
-        form = ImageForm()
-    return render(request, 'index.html', {'form': form})
+        form = imageForm()
+    return render(request, 'userInfo.html', {
+        'form': form
+    })
 
 # Create your views here.
 @login_required
