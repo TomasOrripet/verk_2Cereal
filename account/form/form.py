@@ -1,8 +1,12 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, widgets
 from account.models import Profile
 
-class ImageForm(ModelForm):
-    """Form for the image model"""
+class imageForm(ModelForm):
+
     class Meta:
         model = Profile
-        fields = ["image"]
+        db_table = 'profile'
+        exclude = ['id']
+        widgets = {
+            'image': widgets.FileInput(attrs={'class': 'form-control'}),
+        }

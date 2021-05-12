@@ -4,15 +4,12 @@
     <div class="test">
         <h2>{{ user.id }}</h2>
         <h2>{{ user.username }}</h2>
-        <h2>{{ user.email }}</h2>
-        <form method="post">
+        <h2>{{ Profile.image }}</h2>
+        <form action="{% url 'imageForm' %}" method="POST" >
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Upload</button>
+            {{ form }}
+            <input type="submit" value="Upload"/>
         </form>
-        {% if img_obj %}
-            <h3>Succesfully uploaded : {{img_obj.title}}</h3>
-            <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
-        {% endif %}
+        <img src='{{ MEDIA_URL }}{{ imagefile }}'>
     </div>
 {% endblock %}
