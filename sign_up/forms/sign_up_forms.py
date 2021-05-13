@@ -10,14 +10,10 @@ class createAccountForm(ModelForm):
     class Meta:
         model = createAccount
         db_table = 'sign_up'
-        exclude = ['id']
+        exclude = ['id', 'country', 'city', 'address', 'zip']
         widgets = {
             'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'country': widgets.TextInput(attrs={'class': 'form-control'}),
-            'city': widgets.TextInput(attrs={'class': 'form-control'}),
-            'address': widgets.TextInput(attrs={'class': 'form-control'}),
-            'zip': widgets.TextInput(attrs={'class': 'form-control'}),
         }
 
 
