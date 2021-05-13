@@ -45,6 +45,7 @@ def updateItem(request):
     data = json.loads(request.body)
     cerealName = data['cerealName']
     cerealId = data['cerealId']
+    cerealprice = data['cerealprice']
     action = data['action']
     cart = userCart.objects.create(
         user_id=request.user.id,
