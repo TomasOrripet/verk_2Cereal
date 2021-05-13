@@ -4,17 +4,14 @@
 {% block content %}
     <div class="title">
         <h2>Your Cart</h2>
-    </div>
-    <div class="cart">
-    </div>
-    <button class="buybutton" href="{% url 'payment-index' %}">Pay</button>
-    <p>asdsad</p>
+        <button class="buybutton" href="{% url 'payment-index' %}">Pay</button>
         <div class="temps">
         <div class="itemcont"/>
             {% csrf_token %}
-            {% for incarts in incart %}
-                {% include 'cart/singleitem.html' with incarts=incarts %}
+            {% for cereal in incart %}
+                {{ cereal.cereal_id }}
+                {{ cereal.id }}
             {% endfor %}
         </div>
-    {{ incart }}
+        {{ incart }}
 {% endblock %}
