@@ -5,7 +5,7 @@
 {% block content %}
     <div class="title">
         <h2>Toys</h2>
-        <form class="navbar-form navbar-left" action="{% url 'searchResult' %}" method="POST">
+        <form class="navbar-form navbar-left" action="{% url 'searchResultToys' %}" method="POST">
             {% csrf_token %}
             <div class="form-group">
               <input type="text" name="search" class="form-control" placeholder="Search">
@@ -20,7 +20,7 @@
                 {% include 'toys/singleToy.html' with toy=toy %}
             {% endfor %}
         </div>
-    {% include 'filter_by.html' %}
+    {% include 'filtertoy.html' %}
 </div>
 
 {% endblock %}
