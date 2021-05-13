@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView
-from cart.models import orderCerealItem, order, cereal, userCart
+from cart.forms import cartForms
+from cart.models import cereal, userCart
 from cereal.forms import cereal_form
 from django.http import JsonResponse
 import json
@@ -47,10 +47,18 @@ def updateItem(request):
     cerealId = data['cerealId']
     cerealprice = data['cerealprice']
     action = data['action']
-    cart = userCart.objects.create(
-        user_id=request.user.id,
-        cereal_id=cerealId
-    )
+
+    incart = userCart.objects.filter(user=request.user)
+    try:
+        addcereal = incart.filter(cereal_id=cerealId)
+        total = addcereal.count()
+        addcereal.update(quantity=total+1)
+    except:
+        add = userCart.objects.create(
+            user_id=request.user.id,
+            cereal_id=cerealId
+        )
+        add.save()
     return JsonResponse("Item was added", safe=False)
 
 def searchResultCerealView(request):
