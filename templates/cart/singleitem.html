@@ -1,7 +1,9 @@
-<div class="items" style="max-width:300px; ">
-    <a href="/homepage/cart/{{ cereal.id }}" >
-        <img class="cerealImage" src="{{ cereal.image }}" style="width: 150px"/>
-    </a>
-    <h4>{{ cereal.name }}</h4>
-    <p>Price: {{ cereal.price }} &#36;</p>
+<div class="cart">
+    <img class="cerealImage" src="{{ item.cereal.image }}" style="width: 150px"/>
+    <h4>{{ item.cereal.name }}</h4>
+    <p>Price: {{ item.cereal.price }} &#36;</p>
+    <p>amount: {{ item.quantity }}</p>
+    <div style="{display: flex; }">
+        <button> should remove from cart</button>
+    </div>
 </div>
