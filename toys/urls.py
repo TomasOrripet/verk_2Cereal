@@ -6,7 +6,6 @@ urlpatterns = [
     path('', views.index, name='toys-index'),
     path('<int:id>', views.toyInfo, name='toy_info'),
     path('priceResultToys', views.orderByPrice, name='priceResultToys'),
-    path('filterResultToys', views.filterBy, name='filterResultToys'),
-    path('searchResultToys', views.searchResultToysView, name='searchResultToys'),
+    path('searchResultToys', views.searchResultToysView, name='searchResultToys')
     #path('createtoy', views.toys, name='create-toy')
 ]

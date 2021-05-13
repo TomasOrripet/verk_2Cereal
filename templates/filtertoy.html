@@ -12,22 +12,4 @@
             <input type="submit" value="filter" class="btn btn-primary">
         </form>
     </div>
-    <div class="filterby">
-        <form action="{% url 'filterResultToys' %}" method="POST" name="filterBy">
-            {% csrf_token %}
-            <br>
-            <label >Filter by Manufaturce:</label>
-            <select id="value" name="manufacturer" class="dropDown">
-                <option id="none" name="none" value="none">---------SELECT---------</option>
-                <option id="generalMills" name="generalMills" value="General Mills"> General Mills</option>
-                <option id="kellogg" name="kellogg" value="Kellogg Company">Kellogg Company</option>
-                <option id="post" name="post" value="Quaker">Quaker</option>
-                <option id="quaker" name="quaker" value="Post">Post</option>
-                <option id="Annie's" name="Annie's" value="Annie's">Annie's</option>
-                <option id="Barbara's Bakery" name="Barbara's Bakery" value="Barbara's Bakery">Barbara's Bakery</option>
-                <option id="Weetabix Limited" name="Weetabix Limited" value="Weetabix Limited">Weetabix Limited</option>
-            </select>
-            <input type="submit" value="filter" class="btn btn-primary">
-        </form>
-    </div>
 </div>
