@@ -10,10 +10,12 @@
             <p>{{ user.id }}</p>
             <label for="user_username">Username:</label>
             <p>{{ user.username }}</p>
-            <label for="user_email">Email:</label>
-            <p>{{ user.email }}</p>
+            <label>fav cereal:</label>
+            <p>{{ user.profile.favorite_cereal }}</p>
 
-            <h2>{{ Profile.image }}</h2>
+            <img src="{{ user.profile.profile_image }}" class="cerealImage" style="width:150px"/>
+
+
         </fieldset>
 
         <form class="form form-horizontal" method="POST" >
@@ -21,6 +23,6 @@
             {{ form }}
             <input type="submit" value="Update"/>
         </form>
-        <img src="{{ user.profile.profile_image }}" class="profile-image"/>
+
     </div>
 {% endblock %}

@@ -10,18 +10,19 @@ from django.contrib.auth.models import User
 def index(request):
     content = {"user": get_object_or_404(User, id=request.user.id)}
     return render(request, 'account/userInfo.html', content)
+
 @login_required
 def profile(request):
-    profile = Profile.objects.filter(user=request.user).first
+    profile = Profile.objects.filter(user=request.user).first()
     if request.method == 'POST':
-        form = ProfileForm(instance=profile, data=request.POST)
+        form = ProfileForm(data=request.POST, instance=profile)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
-            return redirect('profile')
+
     return render(request, 'account/userInfo.html',{
-        'form': ProfileForm(instance=profile)
+        'form': ProfileForm(instance=Profile)
     })
 
 
