@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from cart.forms import cartForms
 from cart.models import cereal, userCart
@@ -22,7 +23,7 @@ def Cereal(request):
         'form': form
     })
 
-
+"""
 def createManufacturer(request):
     if request.method == 'POST':
         form = cereal_form.cerealCreateManufacturer(data=request.POST)
@@ -34,26 +35,31 @@ def createManufacturer(request):
     return render(request, 'cereal/createType.html', {
         'form': form
     })
-
+"""
 
 
 def cerealInfo(request, id):
     context = {'cereal': get_object_or_404(cereal, pk=id)}
     return render(request, 'cereal/cerealInfo.html', context)
 
+@login_required
 def updateItem(request):
     data = json.loads(request.body)
     cerealName = data['cerealName']
     cerealId = data['cerealId']
-    cerealprice = data['cerealprice']
+    cerealprice = data['price']
     action = data['action']
 
-    incart = userCart.objects.filter(user=request.user)
+    cart = userCart.objects.filter(user_id=request.user.id)
+    update = cart.filter(cereal_id=cerealId)
+    values = update.values()
     try:
-        addcereal = incart.filter(cereal_id=cerealId)
-        total = addcereal.count()
-        addcereal.update(quantity=total+1)
+        total = values[0]['quantity']
+        update.update(quantity=(total+1))
+        print(update)
+
     except:
+        print("inzero")
         add = userCart.objects.create(
             user_id=request.user.id,
             cereal_id=cerealId

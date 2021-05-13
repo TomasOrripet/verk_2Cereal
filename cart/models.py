@@ -9,6 +9,9 @@ class userCart(models.Model):
 
 
 
+
+
+
     def __str__(self):
-        return f"{self.cereal_id}"
+        return f"{self.quantity}"
 
