@@ -50,6 +50,8 @@ def updateItem(request):
         user_id=request.user.id,
         cereal_id=cerealId
     )
+    return JsonResponse("Item was added", safe=False)
+
 def searchResultCerealView(request):
     query = request.POST['search']
     context = {'cereals': cereal.objects.filter(cerealName__icontains=query)}
