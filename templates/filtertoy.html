@@ -1,0 +1,15 @@
+<div>
+    <div class="orderby">
+        <label >Order by:</label>
+        <form action="{% url 'priceResultToys' %}" method="POST">
+            {% csrf_token %}
+            <select id="value" name="orderby">
+                <option value="price_from_high" name="price_from_high">price (high to low)</option>
+                <option value="price_from_low" name="price_from_low">price (low to high)</option>
+                <option value="name_a_z" name="name_a_z">Name (a-z)</option>
+                <option value="name_z_a" name="name_z_a">Name (z-a)</option>
+            </select>
+            <input type="submit" value="filter" class="btn btn-primary">
+        </form>
+    </div>
+</div>

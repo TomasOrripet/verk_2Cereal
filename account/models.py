@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cereal.models import cereal
 
 # Create your models here.
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='https://miro.medium.com/max/2400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg', upload_to='account/profile_pics')
+    profile_image = models.CharField(max_length=99999)
+    favorite_cereal = models.ForeignKey(cereal, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f'{self.name} Profile'
+
