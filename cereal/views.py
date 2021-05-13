@@ -1,14 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
-from cart.models import orderCerealItem, order
-from cereal.models import cereal
-from cart import models
+from cart.models import orderCerealItem, order, cereal, userCart
 from cereal.forms import cereal_form
 from django.http import JsonResponse
 import json
 
 def index(request):
-    context = {'cereals': models.cereal.objects.all()}
+    context = {'cereals': cereal.objects.all()}
     return render(request, 'cereal/index.html', context)
 
 
@@ -47,14 +45,12 @@ def updateItem(request):
     data = json.loads(request.body)
     cerealName = data['cerealName']
     cerealId = data['cerealId']
+    cerealprice = data['cerealprice']
     action = data['action']
-    print('action:', action)
-    print('cerealId:', cerealId)
-    print('cerealName:', cerealName)
-    if action == 'add' and orderCerealItem.quantity == 0:
-        orderCerealItem.quantity = (orderCerealItem.quantity + 1)
-    elif action == 'remove':
-        orderCerealItem.quantity = (orderCerealItem.quantity - 1)
+    cart = userCart.objects.create(
+        user_id=request.user.id,
+        cereal_id=cerealId
+    )
     return JsonResponse("Item was added", safe=False)
 
 def searchResultCerealView(request):
