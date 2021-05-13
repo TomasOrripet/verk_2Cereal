@@ -115,7 +115,3 @@ def filterBy(request):
                     querySet2 = querySet2 | querySet1
             finaContext = {'cereals': querySet2}
             return render(request, 'cereal/index.html', finaContext)
-
-
-def AddToCart(request):
-    cart = User.objects.filte

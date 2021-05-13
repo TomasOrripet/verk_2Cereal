@@ -33,4 +33,6 @@ class userCart(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     cereal = models.ForeignKey(cereal, on_delete=models.SET_NULL, blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.cereal}"
 

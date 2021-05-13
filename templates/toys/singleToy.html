@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class="items" style="max-width:300px; ">
-    <a href="/homepage/toys/{{ toys.id }}" >
-        <img class="cerealImage" src="{{ toys.toyImage }}" style="width: 150px"/>
+    <a href="/homepage/toys/{{ toy.id }}" >
+        <img class="cerealImage" src="{{ toy.image }}" style="width: 150px"/>
     </a>
-    <h4>{{ toys.toyName }}</h4>
-    <button data-toysname="{{ toys.toyName }}"data-toysid="{{ toys.id }}" data-action="add" class="btn update-cart">Add To Cart</button>
+    <h4>{{ toy.toyName }}</h4>
+    <button data-toysname="{{ toy.toyName }}"data-toysid="{{ toy.id }}" data-action="add" class="btn update-cart">Add To Cart</button>
 </div>

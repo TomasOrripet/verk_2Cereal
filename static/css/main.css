@@ -129,6 +129,11 @@ h2{
     padding-right: 1rem;
 
 }
+.orderby{
+    padding-left: 3rem;
+    padding-right: 1rem;
+}
+
 
 .hp_text{
     text-align: center;
@@ -145,22 +150,22 @@ p.hp_text{
     padding: 2em;
     text-align: center;
     display: inline-block;
-    margin-left: 42%;
-    width: 16%;
-    margin-right: 42%;
+    margin: 1rem;
     background-color: #71AEE5;
     color: white;
     font-size: large;
 }
-
-.border-top.pt-3{
-    margin-bottom: 410px;
+.borderButton{
+    margin-bottom: 110px;
+    display: flex;
+    justify-content: center;
 }
 
 #hp_button:hover{
     transition: all 0.4s;
     background-color: #519de1;
     text-decoration: none;
+    float: left;
 }
 #cartimg {
     width: 50px;
@@ -192,6 +197,7 @@ p.hp_text{
     left: 0px;
     width: 100%;
     color: #2d5db1;
+    background-color: #a8c5e2;
 }
 
 .footer-brand{
