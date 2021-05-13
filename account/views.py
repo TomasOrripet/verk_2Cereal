@@ -21,7 +21,7 @@ def profile(request):
             profile.save()
             return redirect('profile')
     return render(request, 'account/userInfo.html',{
-        'form': ProfileForm(instance=profile)
+        'form': ProfileForm(instance=Profile)
     })
 
 
