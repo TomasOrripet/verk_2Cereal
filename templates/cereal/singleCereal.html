@@ -5,5 +5,5 @@
     <h4>{{ cereal.cerealName }}</h4>
     <p>Price: {{ cereal.price }} &#36;</p>
         {% csrf_token %}
-    <button data-cerealname="{{ cereal.cerealName }}"data-cerealid="{{ cereal.id }}" data-action="add" class="btn update-cart">Add To Cart</button>
+    <button data-cerealname="{{ cereal.cerealName }}"data-cerealid="{{ cereal.id }}" data-price="{{ cereal.price }}" data-action="add" class="btn update-cart">Add To Cart</button>
 </div>
