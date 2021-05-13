@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'sign_up',
     'cart',
     'account',
-    'toys'
+    'toys',
+    'payment'
 ]
 
 MIDDLEWARE = [
