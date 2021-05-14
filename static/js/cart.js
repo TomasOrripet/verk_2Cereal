@@ -40,7 +40,7 @@ function toyfunction(toyid) {
     })
 }
 
-function removeFromCart(id, amount) {
+function removeCerealFromCart(id, amount) {
     fetch("", {
         credentials: "include",
 
@@ -52,6 +52,23 @@ function removeFromCart(id, amount) {
 
         body: JSON.stringify({
             'cerealid': id,
+            'amount': amount
+        })
+    }).then((response) => {
+        return response.json()
+    })
+}
+
+function removeToyFromCart(id, amount) {
+    fetch("", {
+        credentials: "include",
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'toyid': id,
             'amount': amount
         })
     }).then((response) => {
