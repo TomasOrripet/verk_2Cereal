@@ -5,6 +5,9 @@
     <p>Price: {{ item.cereal.price }} &#36;</p>
     <p>Amount: {{ item.quantity }}</p>
     <div style="{display: flex; }">
-        <button> Remove From Cart</button>
+        <form method="post">
+            {% csrf_token %}
+            <button> Remove From Cart</button>
+        </form>
     </div>
 </div>
