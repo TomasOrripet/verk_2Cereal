@@ -16,13 +16,11 @@ def index(request):
                 userCart.objects.update(quantity=data['amount']-1)
         except:
             if data['amount'] == 1:
-                toyCart.objects.filter(user=request.user, toy_id=toyCart.toy.id).delete()
+                toyCart.objects.filter(user=request.user, toy_id=data['toyid']).delete()
             else:
                 userCart.objects.update(quantity=data['amount']-1)
 
-
-        return render(request, 'cart/index.html', content)
-
+        return JsonResponse("done", safe=False)
         #try:
         #
         #except:
