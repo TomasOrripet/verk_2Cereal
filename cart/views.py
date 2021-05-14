@@ -23,8 +23,9 @@ def index(request):
             else:
                 item.update(quantity=data['amount']-1)
 
-        return JsonResponse("done", safe=False)
+        return redirect('cart-index')
+    else:
 
-    return render(request, 'cart/index.html', content)
+        return render(request, 'cart/index.html', content)
 
 
