@@ -1,0 +1,1 @@
+INSERT INTO public.cereal_nutritionvalue (id, "nutritionValue") VALUES (1, '200gr protein');
