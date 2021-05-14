@@ -2,18 +2,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form class="form form-horizontal">
+<form class="form form-horizontal" method="POST">
+    {% csrf_token %}
         <fieldset>
             <legend class="border-bottom mb-4">Confirmation</legend>
                 <p>This is confirmation that you have bought the items in your cart and we will ship them to you in the next 2 days. If you have any questions please send us a email to shipocereal@shipocereal.com.</p>
                 <h3>Thank You For Your Purchase</h3>
         </fieldset>
-        <form method="POST">
-            {% csrf_token %}
-            <a href="{% url 'confirmation' %}">
-                <button class="buybutton">Confirm Purchase</button>
-            </a>
-        </form>
+        <button class="buybutton">Back to homepage</button>
+
 </form>
 
 

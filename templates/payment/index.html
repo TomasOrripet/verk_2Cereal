@@ -50,9 +50,7 @@
         </a>
         <form method="POST">
             {% csrf_token %}
-            <a href="{% url 'confirmation' %}">
-                <button class="buybutton">Confirm Purchase</button>
-            </a>
+            <button class="buybutton">Confirm Purchase</button>
         </form>
     </div>
 {% endblock %}
