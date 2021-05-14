@@ -8,7 +8,7 @@ class cardForm(ModelForm):
         exclude = ['id', 'user']
         widgets = {
             'cardNumber': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'xxxx-xxxx-xxxx-xxxx'}),
-            'nameOfCardholder': widgets.TextInput(attrs={'class': 'form-control'}),
+            'nameOfCardholder': widgets.TextInput(attrs={'class': 'form-control'    }),
             'expirationsDate': widgets.TextInput(attrs={'class': 'form-control'}),
             'CVC': widgets.NumberInput(attrs={'class': 'form-control', 'maxlength': '3', 'placeholder': 'xxx'}),
 
