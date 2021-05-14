@@ -18,7 +18,7 @@ class userInfoForm(ModelForm):
 
 
     class Meta:
-        country_choices = [(1, 'Iceland'), (2, 'Norway'), (3, 'Denmark'), (4, 'Istanbul'), (5,'Kazakhstan')]
+        country_choices = [('Iceland', 'Iceland'), ('Norway', 'Norway'), ('Denmark', 'Denmark'), ('Istanbul', 'Istanbul'), ('Kazakhstan', 'Kazakhstan')]
         model = userInfo
         exclude = ['id', 'user']
         widgets = {
