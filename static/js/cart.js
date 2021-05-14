@@ -1,8 +1,9 @@
-var total = 0
-function countFunction(price){
+var total = []
+function countFunction(price,amo){
 
-    total = total + price
+    total += price
     console.log(total)
+
 
 }
 
