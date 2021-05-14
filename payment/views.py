@@ -3,7 +3,7 @@ from cart.forms.cartForms import CartForm
 from cereal.models import cereal
 from toys.models import toys
 from payment.models import *
-from cart.models import userCart,toyCart
+from cart.models import userCart, toyCart
 from payment.form.form import userInfoForm, cardForm
 # Create your views here.
 def removeFromStock(id, amount):
