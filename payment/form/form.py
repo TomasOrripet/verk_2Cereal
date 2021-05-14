@@ -7,10 +7,10 @@ class cardForm(ModelForm):
         model = cardInfo
         exclude = ['id', 'user']
         widgets = {
-            'cardNumber': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'cardNumber': widgets.NumberInput(attrs={'class': 'form-control', 'maxlength': '16'}),
             'nameOfCardholder': widgets.TextInput(attrs={'class': 'form-control'}),
             'expirationsDate': widgets.TextInput(attrs={'class': 'form-control'}),
-            'CVC': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'CVC': widgets.NumberInput(attrs={'class': 'form-control', 'maxlength': '3'}),
 
         }
 
@@ -22,6 +22,7 @@ class userInfoForm(ModelForm):
         model = userInfo
         exclude = ['id', 'user']
         widgets = {
+            'name': widgets.TextInput( attrs={'class': 'form-control'}),
             'country': widgets.Select(choices=country_choices,attrs={'class': 'form-control'}),
             'city': widgets.TextInput(attrs={'class': 'form-control'}),
             'address': widgets.TextInput(attrs={'class': 'form-control'}),

@@ -233,7 +233,6 @@ h6{
 }
 .PaymentCartItems{
     border: 2px solid black;
-    float: left;
     margin: 5px;
     padding: 3px;
     height: auto;
@@ -253,7 +252,6 @@ h6{
 
 }
 .PaymentCardInfo{
-    float: left;
     margin: 5px;
     padding: 3px;
     height: auto;
