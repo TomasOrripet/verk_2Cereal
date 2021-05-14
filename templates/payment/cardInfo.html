@@ -2,14 +2,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="form form-horizontal" method="POST" >
+    <form class="form form-horizontal" method="post" >
         {% csrf_token %}
+        <fieldset>
         <legend class="border-bottom mb-4">Input Card Information</legend>
             {{ form }}
         </fieldset>
-        <input type="submit" value="Update"/>
-        <a href="{% url 'payment-index' %}" style="padding: 4rem">
-            <button class="buybutton">Go To Review Step</button>
-        </a>
+        <input class="buybutton" type="submit" value="Update"/>
     </form>
 {% endblock %}
