@@ -7,8 +7,9 @@ function countFunction(price,amo){
 
 }
 
-function cerealFuntion(cerealId) {
+function cerealFuntion(cerealId, price) {
     var cerealId = cerealId
+    var price = price
     var url = '/homepage/cereal/update_item'
     console.log(url)
 
@@ -19,13 +20,14 @@ function cerealFuntion(cerealId) {
             'X-CSRFToken': csrftoken,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({'cerealId': cerealId})
+        body: JSON.stringify({'cerealId': cerealId, 'price':price})
     })
 
 }
 
-function toyfunction(toyid) {
+function toyfunction(toyid, price) {
     var toyId = toyid
+    var price = price
 
     var url = '/homepage/cereal/update_item'
 
@@ -36,7 +38,7 @@ function toyfunction(toyid) {
             'X-CSRFToken': csrftoken,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({'toyId': toyId})
+        body: JSON.stringify({'toyId': toyId, 'price':price})
     })
 }
 
