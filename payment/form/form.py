@@ -22,10 +22,9 @@ class userInfoForm(ModelForm):
         model = userInfo
         exclude = ['id', 'user']
         widgets = {
-            'country': widgets.Select(choices=country_choices),
+            'country': widgets.Select(choices=country_choices,attrs={'class': 'form-control'}),
             'city': widgets.TextInput(attrs={'class': 'form-control'}),
             'address': widgets.TextInput(attrs={'class': 'form-control'}),
             'zip': widgets.NumberInput(attrs={'class': 'form-control'}),
 
         }
-        fields = ['country', 'city', 'address', 'zip', ]
