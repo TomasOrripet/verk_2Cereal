@@ -17,6 +17,7 @@ def removeFromStockToys(id, amount):
     mytoys.update(amountInStock=stock - amount)
 
 
+
 def index(request,):
     if request.method == 'POST':
         cerealcart = userCart.objects.filter(user_id=request.user).values()
