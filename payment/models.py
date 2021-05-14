@@ -13,10 +13,10 @@ class userInfo(models.Model):
 
 class cardInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    cardNumber = models.IntegerField(max_length=16)
+    cardNumber = models.IntegerField()
     nameOfCardholder = models.CharField(max_length=255)
     expirationsDate = models.CharField(max_length=11)
-    CVC = models.IntegerField(max_length=3)
+    CVC = models.IntegerField()
 
 
 
