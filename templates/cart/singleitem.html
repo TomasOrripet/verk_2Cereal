@@ -5,9 +5,8 @@
     <p onshow="countFunction({{ item.cereal.price }}),{{ item.quantity }} ">Price: {{ item.cereal.price }} &#36;</p>
     <p>Amount: {{ item.quantity }}</p>
     <div style="{display: flex; }">
-        <form method="post">
-            {% csrf_token %}
-            <button> Remove From Cart</button>
-        </form>
+
+            <button onclick="removeFromCart({{ item.cereal.id }}, {{ item.quantity }})"> Remove From Cart</button>
+
     </div>
 </div>
