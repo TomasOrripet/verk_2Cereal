@@ -13,10 +13,9 @@
                 {% include 'cart/singleitem.html' with item=item %}
             {% endfor %}
         </div>
-        <a href="{% url 'payment-index' %}" style="padding: 4rem">
+        <a href="{% url 'contactInfo' %}" style="padding: 4rem">
             <button class="buybutton">Pay</button>
         </a>
-
     </div>
 
 {% endblock %}

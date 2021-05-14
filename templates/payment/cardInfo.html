@@ -5,6 +5,6 @@
     <form class="form form-horizontal" method="POST" >
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Update"/>
+        <input href="{% url 'payment-index' %}" type="submit" value="Submit"/>
     </form>
 {% endblock %}
