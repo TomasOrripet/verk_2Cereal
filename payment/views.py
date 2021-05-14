@@ -33,7 +33,10 @@ def cardInf(request):
             card.save()
             return redirect('payment-index')
         else:
-            print('ass')
+            form = cardForm()
+            return render(request, 'payment/cardInfo.html', {
+                'form': form
+            })
     else:
         form = cardForm()
         return render(request, 'payment/cardInfo.html', {
@@ -49,6 +52,11 @@ def contactInfo(request):
             contact.user = request.user
             contact.save()
             return redirect('cardInfo')
+        else:
+            form = userInfoForm()
+            return render(request, 'payment/contactInfo.html', {
+                'form': form
+            })
     else:
         form = userInfoForm()
         return render(request, 'payment/contactInfo.html',{
