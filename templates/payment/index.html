@@ -3,55 +3,58 @@
 
 {% block content %}
     <div>
-        <h2>Contact Information</h2>
-        <div class="contactInfo">
-            {% for contact in contactInfo %}
-                <div class="PaymentContactInfo">
-                    <h3 id="text">Country: {{ contact.country }}</h3>
-                    <h3 id="text">City: {{ contact.city }}</h3>
-                    <h3 id="text">Address: {{ contact.address }}</h3>
-                    <h3 id="text">zip: {{ contact.zip }}</h3>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="cardInfo">
-            <h2>Card Information</h2>
-            {% for card in cardInfo %}
-                <div class="PaymentCardInfo">
-                    <h3 id="text">name of Card holder: {{ card.nameOfCardholder }}</h3>
-                    <h3 id="text">card number: {{ card.cardNumber }}</h3>
-                    <h3 id="text">Expirations date: {{ card.expirationsDate }}</h3>
-                    <h3 id="text">CVC: {{ card.CVC }}</h3>
-                </div>
-            {% endfor %}
-        </div><br><br>
-        <h2>Cart information</h2>
-        <div class="cartInfo">
-            {% csrf_token %}
-            {% for item in incart %}
-                <div class="PaymentCartItems">
-                    <img src="{{ item.cereal.image }}" style="width: 50px"/>
-                    <h4>{{ item.cereal.name }}</h4>
-                    <p>Price: {{ item.cereal.price }} &#36;</p>
-                    <p>amount: {{ item.quantity }}</p>
-                 </div>
-            {% endfor %}
-            {% for toy in toycart %}
-                <div class="PaymentCartItems">
-                    <img src="{{ toy.toy.image }}" style="width: 50px"/>
-                    <h4>{{ toy.toy.name }}</h4>
-                    <p>Price: {{ toy.toy.price }} &#36;</p>
-                    <p>amount: {{ toy.quantity }}</p>
-                 </div>
-            {% endfor %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Contact Information</legend>
+            <div class="contactInfo">
+                {% for contact in contactInfo %}
+                    <div class="PaymentContactInfo">
+                        <h3 id="text">Name: {{ contact.name }}</h3>
+                        <h3 id="text">Country: {{ contact.country }}</h3>
+                        <h3 id="text">City: {{ contact.city }}</h3>
+                        <h3 id="text">Address: {{ contact.address }}</h3>
+                        <h3 id="text">zip: {{ contact.zip }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="cardInfo">
+                <legend class="border-bottom mb-4">Card Information</legend>
+                {% for card in cardInfo %}
+                    <div class="PaymentCardInfo">
+                        <h3 id="text">Name Of Cardholder: {{ card.nameOfCardholder }}</h3>
+                        <h3 id="text">Card Number: {{ card.cardNumber }}</h3>
+                        <h3 id="text">Expirations Date: {{ card.expirationsDate }}</h3>
+                        <h3 id="text">CVC: {{ card.CVC }}</h3>
+                    </div>
+                {% endfor %}
+            </div><br><br>
+            <legend class="border-bottom mb-4">Cart Information</legend>
+            <div class="cartInfo">
+                {% csrf_token %}
+                {% for item in incart %}
+                    <div class="PaymentCartItems">
+                        <img src="{{ item.cereal.image }}" style="width: 50px"/>
+                        <h4>{{ item.cereal.name }}</h4>
+                        <p>Price: {{ item.cereal.price }} &#36;</p>
+                        <p>Amount: {{ item.quantity }}</p>
+                     </div>
+                {% endfor %}
+                {% for toy in toycart %}
+                    <div class="PaymentCartItems">
+                        <img src="{{ toy.toy.image }}" style="width: 50px"/>
+                        <h4>{{ toy.toy.name }}</h4>
+                        <p>Price: {{ toy.toy.price }} &#36;</p>
+                        <p>Amount: {{ toy.quantity }}</p>
+                     </div>
+                {% endfor %}
+            </div>
             <p>Total: {{ total }} &#36;</p>
-        </div>
-        <a href="{% url 'contactInfo' %}">
-            <button class="buybutton">Edit payment information</button>
-        </a>
-        <form method="POST">
-            {% csrf_token %}
-            <button class="buybutton">Confirm Purchase</button>
-        </form>
+            <a href="{% url 'contactInfo' %}">
+                <button class="buybutton">Edit Payment Information</button>
+            </a>
+            <form method="POST">
+                {% csrf_token %}
+                <button class="buybutton">Confirm Purchase</button>
+            </form>
+        </fieldset>
     </div>
 {% endblock %}
