@@ -46,11 +46,11 @@ def cerealInfo(request, id):
 @login_required
 def updateItem(request):
     data = json.loads(request.body)
+    print(data)
     try:
-        cerealName = data['cerealName']
+
         cerealId = data['cerealId']
-        cerealprice = data['price']
-        action = data['action']
+
 
         cart = userCart.objects.filter(user_id=request.user.id)
         update = cart.filter(cereal_id=cerealId)
