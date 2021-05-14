@@ -27,14 +27,38 @@ function toyfunction(toyid) {
     var toyId = toyid
 
     var url = '/homepage/cereal/update_item'
+        fetch(url, {
+            credentials: 'include',
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrftoken,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'toyId': toyId})
+        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log('data:', data)
+            })
+    }
+}
 
-    fetch(url, {
-        credentials: 'include',
+function removeFromCart(id, amount){
+    fetch("", {
+        credentials: "include",
+
         method: 'POST',
         headers: {
             'X-CSRFToken': csrftoken,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({'toyId': toyId})
-    })
-}
+
+        body: JSON.stringify({
+            'cerealid': id,
+            'amount': amount
+        })
+            }).then((response) => {
+                return response.json()
+            })
