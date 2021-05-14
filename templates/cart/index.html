@@ -2,21 +2,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="title">
-        <h2>Your Cart</h2>
-    </div>
-
-    <div class="temps">
-        <div class="itemcont"/>
-            {% csrf_token %}
-            {% for item in incart %}
-                {% include 'cart/singleitem.html' with item=item %}
-            {% endfor %}
+    <div class="container">
+        <div class="title">
+            <h2>My Cart</h2>
         </div>
-        <a href="{% url 'payment-index' %}" style="padding: 4rem">
-            <button class="buybutton">Pay</button>
-        </a>
 
+        <div class="temps">
+            <div class="itemcont"/>
+                {% csrf_token %}
+                {% for item in incart %}
+                    {% include 'cart/singleitem.html' with item=item %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
+    <legend class="border-bottom mb-4">Checkout</legend>
+    <div class="border-top pt-3">
+        <small class="text-muted">Do You Want To Continue Shopping Cereal
+            <a class="ml-2" href="{% url 'cereal-index' %}">Continue Shopping Cereal</a>
+        </small>
+    </div>
+    <a href="{% url 'payment-index' %}" style="padding: 4rem">
+            <button class="buybutton">Pay</button>
+    </a>
+
 
 {% endblock %}
