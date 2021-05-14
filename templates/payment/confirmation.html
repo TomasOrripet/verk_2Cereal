@@ -8,9 +8,12 @@
                 <p>This is confirmation that you have bought the items in your cart and we will ship them to you in the next 2 days. If you have any questions please send us a email to shipocereal@shipocereal.com.</p>
                 <h3>Thank You For Your Purchase</h3>
         </fieldset>
-        <a href="{% url 'homepage-index' %}" style="padding: 4rem">
-            <button class="buybutton">Go To Homepage</button>
-        </a>
+        <form method="POST">
+            {% csrf_token %}
+            <a href="{% url 'confirmation' %}">
+                <button class="buybutton">Confirm Purchase</button>
+            </a>
+        </form>
 </form>
 
 
