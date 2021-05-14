@@ -4,6 +4,7 @@
 {% block content %}
     <form class="form form-horizontal" method="POST" >
         {% csrf_token %}
+        <fieldset>
         <legend class="border-bottom mb-4">Input Contact Information</legend>
             {{ form }}
         </fieldset>

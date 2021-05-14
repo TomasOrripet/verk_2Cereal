@@ -1,0 +1,17 @@
+<title>Paymennt</title>
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="form form-horizontal">
+        <fieldset>
+            <legend class="border-bottom mb-4">Confirmation</legend>
+                <p>This is confirmation that you have bought the items in your cart and we will ship them to you in the next 2 days. If you have any questions please send us a email to shipocereal@shipocereal.com.</p>
+                <h3>Thank You For Your Purchase</h3>
+        </fieldset>
+        <a href="{% url 'homepage-index' %}" style="padding: 4rem">
+            <button class="buybutton">Go To Homepage</button>
+        </a>
+</form>
+
+
+{% endblock %}
