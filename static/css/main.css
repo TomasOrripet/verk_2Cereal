@@ -226,3 +226,34 @@ h6{
     padding: 5px 15px;
 }
 
+.cartInfo{
+    background-color: #519de1;
+    border: 2px solid black;
+}
+.PaymentCartItems{
+    border: 2px solid black;
+    float: left;
+    margin: 5px;
+    padding: 3px;
+    height: auto;
+}
+.contactInfo{
+    margin-top: 20px;
+}
+.PaymentContactInfo{
+    margin: 5px;
+    padding: 3px;
+    height: auto;
+}
+#text{
+    border-bottom: 2px solid black;
+}
+.cardInfo{
+
+}
+.PaymentCardInfo{
+    float: left;
+    margin: 5px;
+    padding: 3px;
+    height: auto;
+}
