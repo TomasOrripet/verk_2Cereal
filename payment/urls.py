@@ -8,4 +8,6 @@ urlpatterns = [
     path('cardInfo', views.cardInf, name='cardInfo'),
     path('contactInfo', views.contactInfo, name='contactInfo'),
     path('confirmation', views.confirmation, name='confirmation')
+    path('contactInfo', views.contactInfo, name='contactInfo')
+
 ]

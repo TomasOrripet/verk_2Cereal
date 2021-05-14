@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from cart.forms.cartForms import CartForm
 from payment.models import *
-from cart.models import userCart
+from cart.models import userCart,toyCart
 from payment.form.form import userInfoForm, cardForm
 # Create your views here.
 def index(request,):
@@ -17,8 +17,9 @@ def index(request,):
     else:
         content = {
             'incart': userCart.objects.filter(user_id=request.user.id),
+            'toycart': toyCart.objects.filter(user_id=request.user.id),
             'cardInfo': cardInfo.objects.filter(user_id=request.user.id),
-            'contactInfo': userInfo.objects.filter(user_id=request.user.id)
+            'contactInfo': userInfo.objects.filter(user_id=request.user.id),
         }
         return render(request, 'payment/index.html', content)
 
@@ -31,6 +32,8 @@ def cardInf(request):
             card.user = request.user
             card.save()
             return redirect('payment-index')
+        else:
+            print('ass')
     else:
         form = cardForm()
         return render(request, 'payment/cardInfo.html', {
