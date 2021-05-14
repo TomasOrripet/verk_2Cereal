@@ -5,6 +5,7 @@ from cereal.models import cereal
 
 class userInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, blank=True)
     country = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
@@ -12,10 +13,10 @@ class userInfo(models.Model):
 
 class cardInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    cardNumber = models.IntegerField(default=0)
+    cardNumber = models.IntegerField(max_length=16)
     nameOfCardholder = models.CharField(max_length=255)
-    expirationsDate = models.DateField()
-    CVC = models.IntegerField()
+    expirationsDate = models.CharField(max_length=11)
+    CVC = models.IntegerField(max_length=3)
 
 
 

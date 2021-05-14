@@ -27,5 +27,5 @@ urlpatterns = [
     path('homepage/cutlery/', include('cutlery.urls')),
     path('homepage/clothes/', include('clothes.urls')),
     path('homepage/account/', include('account.urls')),
-    path('homepage/cart/payment', include('payment.urls')),
+    path('homepage/cart/payment/', include('payment.urls')),
 ]
