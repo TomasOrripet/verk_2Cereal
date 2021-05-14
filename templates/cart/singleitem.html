@@ -2,11 +2,11 @@
     <img class="cerealImage" src="{{ item.cereal.image }}" style="width: 150px"/>
     <h4>{{ item.cereal.name }}</h4>
 
-    <p>">Price: {{ item.cereal.price }} &#36;</p>
+    <p>Price: {{ item.cereal.price }} &#36;</p>
     <p>Amount: {{ item.quantity }}</p>
     <div style="{display: flex; }">
 
-            <button onclick="removeFromCart({{ item.cereal.id }}, {{ item.quantity }}), countFunction({{ item.cereal.price }}),{{ item.quantity }} "> Remove From Cart</button>
+            <button onclick="removeFromCart({{ item.cereal.id }}, {{ item.quantity }}) "> Remove From Cart</button>
 
 
     </div>
