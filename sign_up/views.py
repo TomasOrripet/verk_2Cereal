@@ -19,13 +19,11 @@ def info(request):
                 )
                 user.save()
             except IntegrityError:
-                print("username exists")
-                form = createAccountForm()
                 return render(request, 'sign_up/info.html', {
-                    'form': form
+                    'form': form,
+                    'username': 'this Username is taken'
                 })
             return redirect('homepage-index')
-
     else:
         form = createAccountForm()
     return render(request, 'sign_up/info.html', {
