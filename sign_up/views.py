@@ -23,7 +23,7 @@ def info(request):
                 image=request.POST['image'],
             )
             usercreate.save()
-            return redirect('homepage-index')
+            return redirect('sign_in-index')
     else:
         form = createAccountForm()
     return render(request, 'sign_up/info.html', {
