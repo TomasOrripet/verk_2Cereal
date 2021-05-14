@@ -1,3 +1,11 @@
+var total = 0
+function countFunction(price){
+
+    total = total + price
+    console.log(total)
+
+}
+
 function cerealFuntion(cerealId) {
     var cerealId = cerealId
     var url = '/homepage/cereal/update_item'

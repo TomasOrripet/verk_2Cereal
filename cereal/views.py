@@ -42,11 +42,11 @@ def createManufacturer(request):
 def cerealInfo(request, id):
     context = {'cereal': get_object_or_404(cereal, pk=id)}
     return render(request, 'cereal/cerealInfo.html', context)
+total2 = 0
 
 @login_required
 def updateItem(request):
     data = json.loads(request.body)
-    print(data)
     try:
 
         cerealId = data['cerealId']
