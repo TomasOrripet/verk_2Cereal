@@ -54,3 +54,4 @@ def contactInfo(request):
 
 def confirmation(request):
     return render(request, 'payment/confirmation.html')
+
