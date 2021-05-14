@@ -110,11 +110,12 @@ h2{
 }
 
 .cart{
-    border: 4px solid black;
+    border: 2px solid black;
     padding: 1rem;
     background-color: #cde2fc;
     display: inline-block;
-    width: 100%;
+    width: 45%;
+    margin: 5px;
 }
 .temps{
     display: flex;
