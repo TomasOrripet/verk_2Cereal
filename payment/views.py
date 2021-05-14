@@ -1,15 +1,26 @@
 from django.shortcuts import render, redirect
+from cart.forms.cartForms import CartForm
 from payment.models import *
 from cart.models import userCart
 from payment.form.form import userInfoForm, cardForm
 # Create your views here.
 def index(request,):
-    content = {
-        'incart': userCart.objects.filter(user_id=request.user.id),
-        'cardInfo': cardInfo.objects.filter(user_id=request.user.id),
-        'contactInfo': userInfo.objects.filter(user_id=request.user.id)
-    }
-    return render(request, 'payment/index.html', content)
+    if request.method == 'POST':
+        cardInfo.objects.filter(user=request.user).delete()
+        userInfo.objects.filter(user=request.user).delete()
+        userCart.objects.filter(user_id=request.user).delete()
+
+#        card.delete()
+#        contact.delete()
+#        cart.delete()
+        return redirect('homepage-index')
+    else:
+        content = {
+            'incart': userCart.objects.filter(user_id=request.user.id),
+            'cardInfo': cardInfo.objects.filter(user_id=request.user.id),
+            'contactInfo': userInfo.objects.filter(user_id=request.user.id)
+        }
+        return render(request, 'payment/index.html', content)
 
 def cardInf(request):
     card = cardInfo.objects.filter(user=request.user).first()

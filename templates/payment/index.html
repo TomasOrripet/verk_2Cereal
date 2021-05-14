@@ -40,8 +40,11 @@
         <a href="{% url 'contactInfo' %}" style="padding: 4rem">
             <button class="buybutton">Edit payment information</button>
         </a>
-        <a href="{% url 'homepage-index' %}" style="padding: 4rem">
-            <button class="buybutton">Pay</button>
-        </a>
+        <form method="POST">
+            {% csrf_token %}
+            <a href="{% url 'homepage-index' %}" style="padding: 4rem">
+                <button class="buybutton">Pay</button>
+            </a>
+        </form>
     </div>
 {% endblock %}
