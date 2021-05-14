@@ -23,13 +23,6 @@ def index(request):
 
         return render(request, 'cart/index.html', content)
 
-        #try:
-        #
-        #except:
-        #    toyCart.objects.filter(user=request.user, toy_id=toyCart.toy.id).delete()
-
-
-
     return render(request, 'cart/index.html', content)
 
 
