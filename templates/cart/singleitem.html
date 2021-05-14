@@ -5,9 +5,6 @@
     <p>Price: {{ item.cereal.price }} &#36;</p>
     <p>Amount: {{ item.quantity }}</p>
     <div style="{display: flex; }">
-
-            <button onclick="removeFromCart({{ item.cereal.id }}, {{ item.quantity }}) "> Remove From Cart</button>
-
-
+            <button onclick="removeCerealFromCart({{ item.cereal.id }}, {{ item.quantity }})"> Remove From Cart</button>
     </div>
 </div>
