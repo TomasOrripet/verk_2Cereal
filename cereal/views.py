@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from cart.forms import cartForms
-from cart.models import cereal, userCart
+from toys.models import toys
+from cart.models import cereal, userCart, toyCart
 from cereal.forms import cereal_form
 from django.http import JsonResponse
 import json
@@ -45,27 +46,54 @@ def cerealInfo(request, id):
 @login_required
 def updateItem(request):
     data = json.loads(request.body)
-    cerealName = data['cerealName']
-    cerealId = data['cerealId']
-    cerealprice = data['price']
-    action = data['action']
-
-    cart = userCart.objects.filter(user_id=request.user.id)
-    update = cart.filter(cereal_id=cerealId)
-    values = update.values()
     try:
-        total = values[0]['quantity']
-        update.update(quantity=(total+1))
-        print(update)
+        print(data)
+        cerealName = data['cerealName']
+        cerealId = data['cerealId']
+        cerealprice = data['price']
+        action = data['action']
 
+        cart = userCart.objects.filter(user_id=request.user.id)
+        update = cart.filter(cereal_id=cerealId)
+        values = update.values()
+        try:
+            total = values[0]['quantity']
+            update.update(quantity=(total + 1))
+            print(update)
+
+        except:
+            print("inzero")
+            add = userCart.objects.create(
+                user_id=request.user.id,
+                cereal_id=cerealId
+            )
+            add.save()
+        return JsonResponse("Item was added", safe=False)
     except:
-        print("inzero")
-        add = userCart.objects.create(
-            user_id=request.user.id,
-            cereal_id=cerealId
-        )
-        add.save()
-    return JsonResponse("Item was added", safe=False)
+        toyId = data['toyId']
+
+
+        cart = toyCart.objects.filter(user_id=request.user.id)
+        update = cart.filter(toy_id=toyId)
+        values = update.values()
+        try:
+            total = values[0]['quantity']
+            update.update(quantity=(total + 1))
+            print(update)
+
+        except:
+            print("inzero")
+            add = toyCart.objects.create(
+                user_id=request.user.id,
+                toy_id=toyId
+            )
+            add.save()
+        return JsonResponse("Item was added", safe=False)
+
+    return JsonResponse("Item was not added", safe=False)
+
+
+
 
 def searchResultCerealView(request):
     query = request.POST['search']

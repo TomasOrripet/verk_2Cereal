@@ -6,5 +6,5 @@
     </a>
     <h4>{{ toy.toyName }}</h4>
     <p>Price: {{ toy.price }} &#36;</p>
-    <button data-toysname="{{ toy.toyName }}"data-toysid="{{ toy.id }}" data-action="add" class="btn update-cart">Add To Cart</button>
+    <button onclick="toyfunction()" data-toyid="{{ toy.id }}" data-action="add" class="btn update-toy">Add To Cart</button>
 </div>
