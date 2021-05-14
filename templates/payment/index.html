@@ -42,8 +42,8 @@
         </a>
         <form method="POST">
             {% csrf_token %}
-            <a href="{% url 'homepage-index' %}">
-                <button class="buybutton">Pay</button>
+            <a href="{% url 'confirmation' %}">
+                <button class="buybutton">Confirm Purchase</button>
             </a>
         </form>
     </div>
