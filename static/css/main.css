@@ -176,6 +176,7 @@ p.hp_text{
     float: right;
     margin-top: 5px;
     padding: 1rem;
+    margin-left: 1rem;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {

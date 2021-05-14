@@ -37,12 +37,12 @@
                  </div>
             {% endfor %}
         </div>
-        <a href="{% url 'contactInfo' %}" style="padding: 4rem">
+        <a href="{% url 'contactInfo' %}">
             <button class="buybutton">Edit payment information</button>
         </a>
         <form method="POST">
             {% csrf_token %}
-            <a href="{% url 'homepage-index' %}" style="padding: 4rem">
+            <a href="{% url 'homepage-index' %}">
                 <button class="buybutton">Pay</button>
             </a>
         </form>
