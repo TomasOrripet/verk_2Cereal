@@ -10,12 +10,20 @@ def removeFromStock(id, amount):
     stock = (mycereal[0]['amountInStock'])
     mycereal.update(amountInStock=stock - amount)
 
+def removeFromStockToys(id, amount):
+    mytoys = toys.objects.filter(pk=id).values()
+    stock = (mytoys[0]['amountInStock'])
+    mytoys.update(amountInStock=stock - amount)
+
 
 def index(request,):
     if request.method == 'POST':
         cerealcart = userCart.objects.filter(user_id=request.user).values()
         for anycereal in cerealcart:
             removeFromStock(anycereal['cereal_id'], anycereal['quantity'])
+        toyscart = userCart.objects.filter(user_id=request.user).values()
+        for anytoys in toyscart:
+            removeFromStock(anytoys['toys_id'], anytoys['quantity'])
 
         cardInfo.objects.filter(user=request.user).delete()
         toyCart.objects.filter(user=request.user).delete()
