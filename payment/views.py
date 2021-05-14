@@ -38,10 +38,10 @@ def index(request,):
         total = 0
         toys = toyCart.objects.filter(user_id=request.user.id).values()
         for toy in toys:
-            total += toy['price']
+            total += toy['price'] * toy['quantity']
         cereals = userCart.objects.filter(user=request.user).values()
         for cereal in cereals:
-            total += cereal['price']
+            total += cereal['price'] * cereal['quantity']
         content = {
             'incart': userCart.objects.filter(user_id=request.user.id),
             'toycart': toyCart.objects.filter(user_id=request.user.id),
