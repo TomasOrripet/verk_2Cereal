@@ -1,7 +1,5 @@
 import json
-
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
 from cart.models import *
 # Create your views here.
 def index(request):
@@ -27,5 +25,7 @@ def index(request):
     else:
 
         return render(request, 'cart/index.html', content)
+
+
 
 

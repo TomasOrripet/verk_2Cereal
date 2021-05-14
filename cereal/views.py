@@ -24,20 +24,6 @@ def Cereal(request):
         'form': form
     })
 
-"""
-def createManufacturer(request):
-    if request.method == 'POST':
-        form = cereal_form.cerealCreateManufacturer(data=request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('cereal-index')
-    else:
-        form = cereal_form.cerealCreateManufacturer()
-    return render(request, 'cereal/createType.html', {
-        'form': form
-    })
-"""
-
 
 def cerealInfo(request, id):
     context = {'cereal': get_object_or_404(cereal, pk=id)}
