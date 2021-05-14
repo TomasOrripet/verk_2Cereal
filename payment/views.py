@@ -7,11 +7,12 @@ from payment.form.form import userInfoForm, cardForm
 def index(request,):
     if request.method == 'POST':
         cardInfo.objects.filter(user=request.user).delete()
+        toyCart.objects.filter(user=request.user).delete()
         userInfo.objects.filter(user=request.user).delete()
         userCart.objects.filter(user_id=request.user).delete()
         toyCart.objects.filter(user_id=request.user).delete()
 
-        return redirect('homepage-index')
+        return redirect('confirmation')
     else:
         content = {
             'incart': userCart.objects.filter(user_id=request.user.id),
@@ -61,5 +62,8 @@ def contactInfo(request):
             'form': form
         })
 def confirmation(request):
-    return render(request, 'payment/confirmation.html')
+    if request.method == 'POST':
+        return redirect('homepage-index')
+    else:
+        return render(request, 'payment/confirmation.html')
 
