@@ -13,6 +13,9 @@
                 {% for item in incart %}
                     {% include 'cart/singleitem.html' with item=item %}
                 {% endfor %}
+                {% for toy in toyincart %}
+                    {% include 'cart/singletoyitem.html' with toy=toy %}
+                {% endfor %}
             </div>
         </div>
 
