@@ -36,6 +36,7 @@ def updateItem(request):
     try:
 
         cerealId = data['cerealId']
+        price = data['price']
 
 
         cart = userCart.objects.filter(user_id=request.user.id)
@@ -48,12 +49,14 @@ def updateItem(request):
         except:
             add = userCart.objects.create(
                 user_id=request.user.id,
-                cereal_id=cerealId
+                cereal_id=cerealId,
+                price=price
             )
             add.save()
         return JsonResponse("Item was added", safe=False)
     except:
         toyId = data['toyId']
+        price = data['price']
 
 
         cart = toyCart.objects.filter(user_id=request.user.id)
@@ -65,7 +68,8 @@ def updateItem(request):
         except:
             add = toyCart.objects.create(
                 user_id=request.user.id,
-                toy_id=toyId
+                toy_id=toyId,
+                price=price
             )
             add.save()
         return JsonResponse("Item was added", safe=False)
