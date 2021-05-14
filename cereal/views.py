@@ -47,7 +47,6 @@ def cerealInfo(request, id):
 def updateItem(request):
     data = json.loads(request.body)
     try:
-        print(data)
         cerealName = data['cerealName']
         cerealId = data['cerealId']
         cerealprice = data['price']
@@ -59,10 +58,8 @@ def updateItem(request):
         try:
             total = values[0]['quantity']
             update.update(quantity=(total + 1))
-            print(update)
 
         except:
-            print("inzero")
             add = userCart.objects.create(
                 user_id=request.user.id,
                 cereal_id=cerealId
@@ -79,10 +76,7 @@ def updateItem(request):
         try:
             total = values[0]['quantity']
             update.update(quantity=(total + 1))
-            print(update)
-
         except:
-            print("inzero")
             add = toyCart.objects.create(
                 user_id=request.user.id,
                 toy_id=toyId

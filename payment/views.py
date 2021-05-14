@@ -1,11 +1,22 @@
 from django.shortcuts import render, redirect
 from cart.forms.cartForms import CartForm
+from cereal.models import cereal
 from payment.models import *
 from cart.models import userCart,toyCart
 from payment.form.form import userInfoForm, cardForm
 # Create your views here.
+def removeFromStock(id, amount):
+    mycereal = cereal.objects.filter(pk=id).values()
+    stock = (mycereal[0]['amountInStock'])
+    mycereal.update(amountInStock=stock - amount)
+
+
 def index(request,):
     if request.method == 'POST':
+        cerealcart = userCart.objects.filter(user_id=request.user).values()
+        for anycereal in cerealcart:
+            removeFromStock(anycereal['cereal_id'], anycereal['quantity'])
+
         cardInfo.objects.filter(user=request.user).delete()
         userInfo.objects.filter(user=request.user).delete()
         userCart.objects.filter(user_id=request.user).delete()
