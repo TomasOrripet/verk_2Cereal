@@ -9,10 +9,8 @@ def index(request,):
         cardInfo.objects.filter(user=request.user).delete()
         userInfo.objects.filter(user=request.user).delete()
         userCart.objects.filter(user_id=request.user).delete()
+        toyCart.objects.filter(user_id=request.user).delete()
 
-#        card.delete()
-#        contact.delete()
-#        cart.delete()
         return redirect('homepage-index')
     else:
         content = {
