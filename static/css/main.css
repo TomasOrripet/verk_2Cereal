@@ -114,7 +114,7 @@ h2{
     padding: 1rem;
     background-color: #cde2fc;
     display: inline-block;
-    width: 45%;
+    width: auto;
     margin: 5px;
 }
 .temps{
