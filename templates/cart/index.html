@@ -15,16 +15,16 @@
                 {% endfor %}
             </div>
         </div>
+
     </div>
     <legend class="border-bottom mb-4">Checkout</legend>
     <div class="border-top pt-3">
         <small class="text-muted">Do You Want To Continue Shopping Cereal
             <a class="ml-2" href="{% url 'cereal-index' %}">Continue Shopping Cereal</a>
         </small>
-    </div>
-    <a href="{% url 'payment-index' %}" style="padding: 4rem">
+        <a href="{% url 'contactInfo' %}" style="padding: 4rem">
             <button class="buybutton">Pay</button>
-    </a>
-
+        </a>
+    </div>
 
 {% endblock %}
