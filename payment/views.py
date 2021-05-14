@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from cart.forms.cartForms import CartForm
 from cereal.models import cereal
+from toys.models import toys
 from payment.models import *
 from cart.models import userCart, toyCart
 from payment.form.form import userInfoForm, cardForm
@@ -10,12 +11,21 @@ def removeFromStock(id, amount):
     stock = (mycereal[0]['amountInStock'])
     mycereal.update(amountInStock=stock - amount)
 
+def removeFromStockToys(id, amount):
+    mytoys = toys.objects.filter(pk=id).values()
+    stock = (mytoys[0]['amountInStock'])
+    mytoys.update(amountInStock=stock - amount)
+
+
 
 def index(request,):
     if request.method == 'POST':
         cerealcart = userCart.objects.filter(user_id=request.user).values()
         for anycereal in cerealcart:
             removeFromStock(anycereal['cereal_id'], anycereal['quantity'])
+        toyscart = toyCart.objects.filter(user_id=request.user).values()
+        for anytoys in toyscart:
+            removeFromStockToys(anytoys['toy_id'], anytoys['quantity'])
 
         cardInfo.objects.filter(user=request.user).delete()
         toyCart.objects.filter(user=request.user).delete()
