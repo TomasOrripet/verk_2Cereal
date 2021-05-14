@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from cart.forms.cartForms import CartForm
 from cereal.models import cereal
+from toys.models import toys
 from payment.models import *
 from cart.models import userCart,toyCart
 from payment.form.form import userInfoForm, cardForm
@@ -21,9 +22,9 @@ def index(request,):
         cerealcart = userCart.objects.filter(user_id=request.user).values()
         for anycereal in cerealcart:
             removeFromStock(anycereal['cereal_id'], anycereal['quantity'])
-        toyscart = userCart.objects.filter(user_id=request.user).values()
+        toyscart = toyCart.objects.filter(user_id=request.user).values()
         for anytoys in toyscart:
-            removeFromStock(anytoys['toys_id'], anytoys['quantity'])
+            removeFromStockToys(anytoys['toy_id'], anytoys['quantity'])
 
         cardInfo.objects.filter(user=request.user).delete()
         toyCart.objects.filter(user=request.user).delete()
