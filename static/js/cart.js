@@ -82,3 +82,24 @@ function toyfunction () {
             })
     }
 }
+
+function removeFromCart(id, amount){
+    var url = 'homepage/cart/removeitem'
+    console.log(amount)
+    console.log(id)
+    var removefromcart = document.getElementsByClassName('remove-from-cart')
+    fetch("", {
+        credentials: "include",
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'cerealid': id,
+            'amount': amount
+        })
+            }).then((response) => {
+                return response.json()
+            })
+}
