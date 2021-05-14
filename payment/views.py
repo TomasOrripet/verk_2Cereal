@@ -35,11 +35,19 @@ def index(request,):
 
         return redirect('confirmation')
     else:
+        total = 0
+        toys = toyCart.objects.filter(user_id=request.user.id).values()
+        for toy in toys:
+            total += toy['price']
+        cereals = userCart.objects.filter(user=request.user).values()
+        for cereal in cereals:
+            total += cereal['price']
         content = {
             'incart': userCart.objects.filter(user_id=request.user.id),
             'toycart': toyCart.objects.filter(user_id=request.user.id),
             'cardInfo': cardInfo.objects.filter(user_id=request.user.id),
             'contactInfo': userInfo.objects.filter(user_id=request.user.id),
+            'total': total,
         }
         return render(request, 'payment/index.html', content)
 
