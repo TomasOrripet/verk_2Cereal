@@ -2,9 +2,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form class="form form-horizontal" method="POST" >
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Update"/>
-    </form>
+    <div>
+        <h2>Contact Information</h2>
+        <div class="contactInfo">
+            {% for contact in contactInfo %}
+                <div class="PaymentContactInfo">
+                    <h3 id="text">Country: {{ contact.country }}</h3>
+                    <h3 id="text">City: {{ contact.city }}</h3>
+                    <h3 id="text">Address: {{ contact.address }}</h3>
+                    <h3 id="text">zip: {{ contact.zip }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="cardInfo">
+            <h2>Card Information</h2>
+            {% for card in cardInfo %}
+                <div class="PaymentCardInfo">
+                    <h3 id="text">name of Card holder: {{ card.nameOfCardholder }}</h3>
+                    <h3 id="text">card number: {{ card.cardNumber }}</h3>
+                    <h3 id="text">Expirations date: {{ card.expirationsDate }}</h3>
+                    <h3 id="text">CVC: {{ card.CVC }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+     <h2>Cart information</h2>
+        <div class="cartInfo">
+            {% csrf_token %}
+            {% for item in incart %}
+                <div class="PaymentCartItems">
+                    <img src="{{ item.cereal.image }}" style="width: 50px"/>
+                    <h4>{{ item.cereal.name }}</h4>
+                    <p>Price: {{ item.cereal.price }} &#36;</p>
+                    <p>amount: {{ item.quantity }}</p>
+                 </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'contactInfo' %}" style="padding: 4rem">
+            <button class="buybutton">Edit payment information</button>
+        </a>
+        <a href="{% url 'homepage-index' %}" style="padding: 4rem">
+            <button class="buybutton">Pay</button>
+        </a>
+    </div>
 {% endblock %}
