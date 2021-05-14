@@ -13,16 +13,12 @@ def index(request):
             item = userCart.objects.filter(user=request.user, cereal_id=data['cerealid'])
             if data['amount'] == 1:
                 item.delete()
-                print(3)
                 userCart.objects.filter(user=request.user, cereal_id=data['cerealid']).delete()
             else:
-
-                print(2)
                 item.update(quantity=data['amount']-1)
         except:
             item = toyCart.objects.filter(user=request.user, toy_id=data['toyid'])
             if data['amount'] == 1:
-                print(1)
                 item.delete()
             else:
                 item.update(quantity=data['amount']-1)
